@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://idhuu6fw12ga"]
+
+[ext_resource type="Texture2D" uid="uid://tnohgo3qmlxk" path="res://Imagen/image1_0 (1).jpg" id="1_emkd1"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_jjwou"]
+[ext_resource type="Texture2D" uid="uid://dqudtuq5e2fbl" path="res://Imagen/upscalemedia-transformed.png" id="2_jxery"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8xui"]
+bg_color = Color(0.779291, 0.779291, 0.779291, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh5ff"]
+bg_color = Color(0.00820202, 0.00820203, 0.00820202, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewx8i"]
+bg_color = Color(0.868985, 0.868985, 0.868985, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlwyi"]
+bg_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jjwou")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.730622, 0.729894, 0.716288, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_emkd1")
+expand_mode = 1
+
+[node name="Titulo" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -264.0
+offset_right = 300.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jxery")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 75.0
+offset_right = 216.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 26
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_w8xui")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fh5ff")
+text = "JUGAR"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_ewx8i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xlwyi")
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
