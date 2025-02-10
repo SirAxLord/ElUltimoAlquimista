@@ -1,0 +1,8 @@
+res://Escenas/juego1player.tscn
+res://Escenas/Personaje.tscn
+res://Levels/level_prueba.tscn
+res://Escenas/Character.tscn
+res://Scripts/Jugador/character.gd
+res://Escenas/Prueba.tscn
+res://Escenas/Goblin.tscn
+res://Scripts/Enemies/goblin.gd
