@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgcrh21qnt1cj"]
+
+[ext_resource type="PackedScene" uid="uid://dm674q5p0rr33" path="res://Escenas/Prueba.tscn" id="1_yfy6x"]
+[ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Character.tscn" id="2_d7nys"]
+[ext_resource type="PackedScene" uid="uid://bhb0udmgfa6r3" path="res://Escenas/Goblin.tscn" id="3_i0ryu"]
+
+[node name="LevelPrueba" type="Node2D"]
+position = Vector2(305, -4)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_yfy6x")]
+position = Vector2(274, 465)
+scale = Vector2(1.45, 1)
+
+[node name="Character" parent="StaticBody2D" instance=ExtResource("2_d7nys")]
+position = Vector2(-353.103, 112)
+scale = Vector2(0.689655, 1)
+
+[node name="Goblin" parent="StaticBody2D" instance=ExtResource("3_i0ryu")]
+position = Vector2(89.6552, 123)
+scale = Vector2(0.558621, 0.720002)
