@@ -2,7 +2,7 @@ class_name Goblin
 extends CharacterBody2D
 
 const SPEED = 100.0
-const MOVE_RANGE = 300.0  # Rango de movimiento más grande en el eje X
+const MOVE_RANGE = 100.0  # Rango de movimiento más grande en el eje X
 
 var direction = Vector2()
 

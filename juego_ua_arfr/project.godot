@@ -14,3 +14,12 @@ config/name="Juego_UA_ARFR"
 run/main_scene="res://Escenas/juego1player.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Escenas/": "red",
+"res://Levels/": "green",
+"res://Resources/": "yellow",
+"res://Scripts/": "purple"
+}

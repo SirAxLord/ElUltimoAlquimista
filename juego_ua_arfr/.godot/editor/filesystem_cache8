@@ -1,38 +1,47 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1739157975
-icon.svg::CompressedTexture2D::3987080476606567377::1739156595::1739156713::1::::<><>::
-::res://Escenas/::1739158337
-Character.tscn::PackedScene::7314962747516747515::1739158209::0::1::::<><>::res://Scripts/Jugador/character.gd<>uid://c6m5poruf0f34::::res://Imagen/Character/human1x4.png
-Goblin.tscn::PackedScene::2881360783997681130::1739158337::0::1::::<><>::res://Scripts/Jugador/character.gd<>uid://c6m5poruf0f34::::res://Imagen/Character/human1x4.png
-juego1player.tscn::PackedScene::8851451722849995321::1739156721::0::1::::<><>::res://Scripts/Jugador/player.gd<>uid://bw2mvrwxdg1i0::::res://icon.svg<>uid://dp1r4wndatuvm::::res://Imagen/parallax_mountain_pack/layers/parallax-mountain-bg.png<>uid://d8d72wevbh03::::res://Imagen/parallax_mountain_pack/layers/parallax-mountain-montain-far.png<>uid://d0enugddt80cw::::res://Imagen/parallax_mountain_pack/layers/parallax-mountain-mountains.png<>uid://boi4crb2smy7n::::res://Imagen/parallax_mountain_pack/layers/parallax-mountain-trees.png<>uid://2uwboly1jvg6::::res://Imagen/parallax_mountain_pack/layers/parallax-mountain-foreground-trees.png
-juego2player.tscn::PackedScene::3958001077185856464::1739156595::0::1::::<><>::
-menu.tscn::PackedScene::568165715807471176::1739156595::0::1::::<><>::uid://tnohgo3qmlxk::::res://Imagen/image1_0 (1).jpg<>res://Scripts/menu.gd<>uid://dqudtuq5e2fbl::::res://Imagen/upscalemedia-transformed.png
-personajes.tscn::PackedScene::5267413843260869554::1739156595::0::1::::<><>::res://Scripts/personajes.gd<>uid://0locsr3oy6l5::::res://Imagen/Diseño sin título.png
-Prueba.tscn::PackedScene::8067519504336677008::1739158209::0::1::::<><>::uid://c0dn1ek7jeb44::::res://Imagen/Floor/forest-1.png
-::res://Imagen/::1739157069
-Diseño sin título.png::CompressedTexture2D::1778283828705865200::1739156595::1739156713::1::::<><>::
-image1_0 (1).jpg::CompressedTexture2D::1361287816442878244::1739156595::1739156713::1::::<><>::
-upscalemedia-transformed.png::CompressedTexture2D::8323788261984857881::1739156595::1739156713::1::::<><>::
-::res://Imagen/Character/::1739158394
-goblin4x.png::CompressedTexture2D::8778958062503385320::1739158377::1739158377::1::::<><>::
-human1x4.png::CompressedTexture2D::6975317112410447297::1739156844::1739157070::1::::<><>::
-minotaur4x.png::CompressedTexture2D::851370510639758553::1739158394::1739158394::1::::<><>::
-orc4x.png::CompressedTexture2D::7976054353095930607::1739158386::1739158386::1::::<><>::
-::res://Imagen/Floor/::1739157214
-forest-1.png::CompressedTexture2D::6534591570154247083::1739157198::1739157214::1::::<><>::
-::res://Imagen/parallax_mountain_pack/::1739156595
-license.txt::TextFile::-1::1739156595::0::1::::<><>::
-::res://Imagen/parallax_mountain_pack/layers/::1739156713
-parallax-mountain-bg.png::CompressedTexture2D::8266853679888852446::1739156595::1739156713::1::::<><>::
-parallax-mountain-foreground-trees.png::CompressedTexture2D::1937724646388160743::1739156595::1739156713::1::::<><>::
-parallax-mountain-montain-far.png::CompressedTexture2D::278931745507329890::1739156595::1739156713::1::::<><>::
-parallax-mountain-mountains.png::CompressedTexture2D::8923066009767950614::1739156595::1739156713::1::::<><>::
-parallax-mountain-trees.png::CompressedTexture2D::3387344776729137741::1739156595::1739156713::1::::<><>::
-::res://Levels/::1739158209
-level_prueba.tscn::PackedScene::7585570016890465949::1739158209::0::1::::<><>::uid://dm674q5p0rr33::::res://Escenas/Prueba.tscn<>uid://dchomrc7mvnr4::::res://Escenas/Character.tscn
-::res://Scripts/::1739156595
-menu.gd::GDScript::-1::1739156595::0::1::::<>Control<>::
-personajes.gd::GDScript::-1::1739156595::0::1::::<>Control<>::
-::res://Scripts/Jugador/::1739158045
-character.gd::GDScript::-1::1739158045::0::1::::Character<>CharacterBody2D<>::
-player.gd::GDScript::-1::1739156595::0::1::::<>CharacterBody2D<>::
+::res://::1739197830
+icon.svg::CompressedTexture2D::3987080476606567377::1739161874::1739162003::1::::<><>::
+::res://Escenas/::1739198536
+juego1player.tscn::PackedScene::8851451722849995321::1739198536::0::1::::<><>::res://Scripts/Jugador/player.gd<>uid://bw2mvrwxdg1i0::::res://icon.svg<>uid://dp1r4wndatuvm::::res://Resources/parallax_mountain_pack/layers/parallax-mountain-bg.png<>uid://d8d72wevbh03::::res://Resources/parallax_mountain_pack/layers/parallax-mountain-montain-far.png<>uid://d0enugddt80cw::::res://Resources/parallax_mountain_pack/layers/parallax-mountain-mountains.png<>uid://boi4crb2smy7n::::res://Resources/parallax_mountain_pack/layers/parallax-mountain-trees.png<>uid://2uwboly1jvg6::::res://Resources/parallax_mountain_pack/layers/parallax-mountain-foreground-trees.png
+juego2player.tscn::PackedScene::3958001077185856464::1739161874::0::1::::<><>::
+::res://Escenas/Characters/::1739198693
+Character.tscn::PackedScene::7314962747516747515::1739197809::0::1::::<><>::res://Scripts/Jugador/character.gd<>uid://c6m5poruf0f34::::res://Resources/Character/human1x4.png
+Goblin.tscn::PackedScene::2881360783997681130::1739197809::0::1::::<><>::res://Scripts/Enemies/goblin.gd<>uid://dxcufldwtdj81::::res://Resources/Character/goblin4x.png
+Minotaur.tscn::PackedScene::6529556165565066339::1739198666::0::1::::<><>::res://Scripts/Enemies/goblin.gd<>uid://men7h2gh2kg4::::res://Resources/Character/minotaur4x.png
+Orc.tscn::PackedScene::377327095226122318::1739198693::0::1::::<><>::res://Scripts/Enemies/goblin.gd<>uid://dlvwpkcb8x2il::::res://Resources/Character/orc4x.png
+::res://Escenas/Escenario/::1739197809
+Prueba.tscn::PackedScene::8067519504336677008::1739197809::0::1::::<><>::uid://c0dn1ek7jeb44::::res://Resources/Floor/forest-1.png
+::res://Escenas/Items/::1739197658
+::res://Escenas/Menus/::1739197809
+Menu_personajes.tscn::PackedScene::5267413843260869554::1739197809::0::1::::<><>::res://Scripts/personajes.gd<>uid://0locsr3oy6l5::::res://Resources/Diseño sin título.png
+Menu_Principal.tscn::PackedScene::568165715807471176::1739197809::0::1::::<><>::res://Scripts/menu.gd<>uid://tnohgo3qmlxk::::res://Resources/image1_0 (1).jpg<>uid://dqudtuq5e2fbl::::res://Resources/upscalemedia-transformed.png
+::res://Levels/::1739198777
+level_prueba.tscn::PackedScene::7585570016890465949::1739198777::0::1::::<><>::uid://dm674q5p0rr33::::res://Escenas/Escenario/Prueba.tscn<>uid://dchomrc7mvnr4::::res://Escenas/Characters/Character.tscn<>uid://bhb0udmgfa6r3::::res://Escenas/Characters/Goblin.tscn<>uid://fm1r0t2m3bec::::res://Escenas/Characters/Orc.tscn<>uid://c0a73oq1d2xfv::::res://Escenas/Characters/Minotaur.tscn
+::res://Resources/::1739197810
+Diseño sin título.png::CompressedTexture2D::1778283828705865200::1739161874::1739197810::1::::<><>::
+image1_0 (1).jpg::CompressedTexture2D::1361287816442878244::1739161874::1739197810::1::::<><>::
+upscalemedia-transformed.png::CompressedTexture2D::8323788261984857881::1739161874::1739197810::1::::<><>::
+::res://Resources/Character/::1739197810
+goblin4x.png::CompressedTexture2D::8778958062503385320::1739161874::1739197810::1::::<><>::
+human1x4.png::CompressedTexture2D::6975317112410447297::1739161874::1739197810::1::::<><>::
+minotaur4x.png::CompressedTexture2D::851370510639758553::1739161874::1739197810::1::::<><>::
+orc4x.png::CompressedTexture2D::7976054353095930607::1739161874::1739197810::1::::<><>::
+::res://Resources/Floor/::1739197810
+forest-1.png::CompressedTexture2D::6534591570154247083::1739161874::1739197810::1::::<><>::
+::res://Resources/parallax_mountain_pack/::1739161874
+license.txt::TextFile::-1::1739161874::0::1::::<><>::
+::res://Resources/parallax_mountain_pack/layers/::1739197810
+parallax-mountain-bg.png::CompressedTexture2D::8266853679888852446::1739161874::1739197810::1::::<><>::
+parallax-mountain-foreground-trees.png::CompressedTexture2D::1937724646388160743::1739161874::1739197810::1::::<><>::
+parallax-mountain-montain-far.png::CompressedTexture2D::278931745507329890::1739161874::1739197810::1::::<><>::
+parallax-mountain-mountains.png::CompressedTexture2D::8923066009767950614::1739161874::1739197810::1::::<><>::
+parallax-mountain-trees.png::CompressedTexture2D::3387344776729137741::1739161874::1739197810::1::::<><>::
+::res://Scripts/::1739161874
+menu.gd::GDScript::-1::1739161874::0::1::::<>Control<>::
+personajes.gd::GDScript::-1::1739161874::0::1::::<>Control<>::
+::res://Scripts/Enemies/::1739198827
+goblin.gd::GDScript::-1::1739198777::0::1::::Orc<>CharacterBody2D<>::
+Orc.gd::GDScript::-1::1739198827::0::1::::Orc<>CharacterBody2D<>::
+::res://Scripts/Jugador/::1739198511
+character.gd::GDScript::-1::1739161874::0::1::::Character<>CharacterBody2D<>::
+player.gd::GDScript::-1::1739198511::0::1::::<>CharacterBody2D<>::
