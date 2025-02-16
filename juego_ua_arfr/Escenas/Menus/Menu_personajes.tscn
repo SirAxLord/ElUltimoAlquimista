@@ -87,7 +87,7 @@ text = "ATRAS"
 
 [connection signal="pressed" from="VBoxContainer/one player" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/one player" to="." method="_on_one_player_pressed"]
-[connection signal="pressed" from="VBoxContainer/two players" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="VBoxContainer/two players" to="." method="_on_two_players_pressed"]
+[connection signal="pressed" from="VBoxContainer/two players" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="VBoxContainer/back" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]
