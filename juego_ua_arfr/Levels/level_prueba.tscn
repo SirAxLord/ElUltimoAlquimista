@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgcrh21qnt1cj"]
+[gd_scene load_steps=6 format=3 uid="uid://dgcrh21qnt1cj"]
 
 [ext_resource type="PackedScene" uid="uid://dm674q5p0rr33" path="res://Escenas/Escenario/Prueba.tscn" id="1_yfy6x"]
 [ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="2_d7nys"]
+[ext_resource type="PackedScene" uid="uid://b7ydsxoghsfup" path="res://Escenas/Menus/Menu_pausa.tscn" id="5_121ba"]
 [ext_resource type="PackedScene" uid="uid://c0a73oq1d2xfv" path="res://Escenas/Characters/Minotaur.tscn" id="5_hn1sq"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Minotaur.gd" id="7_hj3t0"]
 
@@ -19,3 +20,9 @@ scale = Vector2(0.689655, 1)
 [node name="Minotaur" parent="StaticBody2D" instance=ExtResource("5_hn1sq")]
 position = Vector2(200, 114)
 script = ExtResource("7_hj3t0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuPausa" parent="CanvasLayer" instance=ExtResource("5_121ba")]
+process_mode = 3
+visible = false
