@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7ydsxoghsfup"]
 
-[ext_resource type="Script" path="res://Scripts/menu_pausa.gd" id="1_3w4qo"]
+[ext_resource type="Script" path="res://Scripts/Menu/menu_pausa.gd" id="1_3w4qo"]
 
 [node name="MenuPausa" type="Control"]
 layout_mode = 3

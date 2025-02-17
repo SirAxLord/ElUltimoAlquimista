@@ -1,7 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://chbtsido8dclm"]
 
-[ext_resource type="Script" path="res://Scripts/personajes.gd" id="1_epfee"]
+[ext_resource type="Script" path="res://Scripts/Menu/personajes.gd" id="1_epfee"]
 [ext_resource type="Texture2D" uid="uid://0locsr3oy6l5" path="res://Resources/Diseño sin título.png" id="2_n8ayu"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8xui"]
 bg_color = Color(0.779291, 0.779291, 0.779291, 1)

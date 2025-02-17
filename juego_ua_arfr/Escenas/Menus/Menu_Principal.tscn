@@ -1,8 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://idhuu6fw12ga"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_1h380"]
+[ext_resource type="Script" path="res://Scripts/Menu/menu.gd" id="1_1h380"]
 [ext_resource type="Texture2D" uid="uid://tnohgo3qmlxk" path="res://Resources/image1_0 (1).jpg" id="2_dn7v2"]
 [ext_resource type="Texture2D" uid="uid://dqudtuq5e2fbl" path="res://Resources/upscalemedia-transformed.png" id="3_ov3eb"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8xui"]
 bg_color = Color(0.779291, 0.779291, 0.779291, 1)

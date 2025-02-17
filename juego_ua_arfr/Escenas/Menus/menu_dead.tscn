@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxhix7s40mpf0"]
 
-[ext_resource type="Script" path="res://Scripts/menu_dead.gd" id="1_2kiua"]
+[ext_resource type="Script" path="res://Scripts/Menu/menu_dead.gd" id="1_2kiua"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deoo8"]
 bg_color = Color(0, 0.318877, 0.0864647, 1)
@@ -46,7 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

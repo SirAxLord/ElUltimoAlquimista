@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj8ouf8birocj"]
+
+[ext_resource type="Script" path="res://Scripts/Escenario/Trap.gd" id="1_g63nj"]
+[ext_resource type="Texture2D" uid="uid://m371jf5b61rv" path="res://Resources/parallax_mountain_pack/cactus-1.png" id="1_u75lo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sjp6e"]
+radius = 20.0
+height = 64.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Trap" type="Area2D" parent="."]
+script = ExtResource("1_g63nj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Trap"]
+texture = ExtResource("1_u75lo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trap"]
+shape = SubResource("CapsuleShape2D_sjp6e")
+
+[connection signal="body_entered" from="Trap" to="Trap" method="_on_body_entered"]
