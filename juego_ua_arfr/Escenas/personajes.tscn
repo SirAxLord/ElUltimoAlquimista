@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://chbtsido8dclm"]
+
+[ext_resource type="Script" path="res://Scripts/personajes.gd" id="1_ijuhf"]
+[ext_resource type="Texture2D" uid="uid://0locsr3oy6l5" path="res://Imagen/Diseño sin título.png" id="2_6txly"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8xui"]
+bg_color = Color(0.779291, 0.779291, 0.779291, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh5ff"]
+bg_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsnm4"]
+bg_color = Color(0.860369, 0.860369, 0.860369, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3t1c"]
+bg_color = Color(0.0430392, 0.0430392, 0.0430391, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewx8i"]
+bg_color = Color(0.868985, 0.868985, 0.868985, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlwyi"]
+bg_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
+
+[node name="Personajes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijuhf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.730622, 0.729894, 0.716288, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6txly")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.771
+anchor_right = 0.5
+anchor_bottom = 0.771
+offset_left = -214.0
+offset_top = -148.608
+offset_right = 217.0
+offset_bottom = 110.392
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 26
+
+[node name="one player" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_w8xui")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fh5ff")
+text = "UN JUGADOR"
+
+[node name="two players" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_hsnm4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u3t1c")
+text = "DOS JUGADORES"
+
+[node name="back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_ewx8i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xlwyi")
+text = "ATRAS"
+
+[connection signal="pressed" from="VBoxContainer/one player" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/one player" to="." method="_on_one_player_pressed"]
+[connection signal="pressed" from="VBoxContainer/two players" to="." method="_on_two_players_pressed"]
+[connection signal="pressed" from="VBoxContainer/two players" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="VBoxContainer/back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]
