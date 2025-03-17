@@ -1,16 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhb0udmgfa6r3"]
+[gd_scene load_steps=5 format=3 uid="uid://bhb0udmgfa6r3"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/goblin.gd" id="1_3qec6"]
 [ext_resource type="Texture2D" uid="uid://dxcufldwtdj81" path="res://Resources/Character/goblin4x.png" id="2_a6fld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yscb5"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr050"]
+size = Vector2(68, 68)
+
+[node name="Goblin" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_3qec6")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_a6fld")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
 scale = Vector2(3.2, 3.2)
 shape = SubResource("RectangleShape2D_yscb5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_qr050")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,11 +1,5 @@
 res://Levels/level_prueba.tscn
-res://Escenas/Escenario/Platform.tscn
-res://Escenas/Escenario/trap.tscn
-res://Scripts/Jugador/character.gd
-res://Scripts/Escenario/trap.gd
-res://Scripts/Escenario/Trap.gd
 res://Escenas/Characters/Character.tscn
+res://Escenas/Characters/Goblin.tscn
 res://Escenas/Escenario/Trap.tscn
-res://Escenas/Menus/menu_dead.tscn
-res://Escenas/juego1player.tscn
-res://Escenas/Menus/Menu_pausa.tscn
+res://Escenas/Items/Item.tscn

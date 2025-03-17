@@ -1,24 +1,51 @@
 class_name Goblin
 extends CharacterBody2D
 
-const SPEED = 100.0
-const MOVE_RANGE = 100.0  # Rango de movimiento más grande en el eje X
+@export var speed := 100.0  # Velocidad horizontal para seguir al personaje
+@export var gravity := 1000.0  # Fuerza de la gravedad
+@export var max_fall_speed := 500.0  # Velocidad máxima al caer
 
-var direction = Vector2()
+var player: Node2D = null  # Referencia al nodo del personaje
 
-func _ready() -> void:
-	# Establece una posición aleatoria inicial dentro del rango de movimiento
-	position.x += randi() % int(MOVE_RANGE) - MOVE_RANGE / 2
-	# Establece una dirección aleatoria inicial
-	direction = Vector2(randi() % 2 * 2 - 1, 0)
+func _ready():
+	# Buscar al personaje en el Árbol de Escena
+	player = get_parent().get_node("Character")
 
-func _physics_process(delta: float) -> void:
-	# Movimiento en el eje X dentro del rango
-	if direction.x > 0 and position.x > MOVE_RANGE / 2:
-		direction.x = -1
-	elif direction.x < 0 and position.x < -MOVE_RANGE / 2:
-		direction.x = 1
-	
-	velocity.x = direction.x * SPEED
+func _physics_process(delta):
+	# Aplicar gravedad para que el enemigo caiga
+	if not is_on_floor():
+		velocity.y += gravity * delta
+		# Limitar la velocidad de caída
+		velocity.y = min(velocity.y, max_fall_speed)
 
+	# Asegurarse de que player no sea null antes de usarlo
+	if player:
+		# Calcular la dirección hacia el personaje
+		var direction = (player.global_position - global_position).normalized()
+
+		# Mover al enemigo hacia el personaje solo en el eje X (horizontal)
+		velocity.x = direction.x * speed
+	else:
+		# Si no hay un personaje, detener el movimiento horizontal
+		velocity.x = 0
+
+	# Mover al enemigo y manejar colisiones
 	move_and_slide()
+
+# Funcion para cuando el personaje entra en el area del enemigo
+func _on_area_2d_body_entered(body):
+	if body.name == "Character": 
+		print("Daño al jugador por enemigo")
+		enemigo_dañado()
+
+func enemigo_dañado():
+	print("Enemigo eliminado")  # Imprime en la consola para depuración
+
+	hide()  # Oculta al enemigo
+	# Generar una posición aleatoria
+	var random_position = Vector2(
+		randf() * 1000.0,  # Rango en X (ajusta según tu nivel)
+		randf() * 600.0    # Rango en Y (ajusta según tu nivel)
+	)
+	global_position = random_position  # Cambiar la posición
+	show()  # Mostrar al enemigo de nuevo

@@ -1,6 +1,9 @@
+AnimatedSprite2D
 Area2D
-StaticBody2D
-RigidBody2D
-CollisionShape2D
 Sprite2D
+CollisionShape2D
+StaticBody2D
+Timer
+RigidBody2D
+Node2D
 CharacterBody2D
