@@ -1,30 +1,36 @@
-class_name character
+class_name Character
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const MAX_JUMPS = 2
+@export var speed := 200.0  # Velocidad horizontal máxima
+@export var jump_force := -400.0  # Fuerza del salto
+@export var gravity := 1000.0  # Gravedad personalizada
 
-var jump_count = 0
+var can_double_jump := true  # Permite controlar si el personaje puede hacer doble salto
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
+func _physics_process(delta):
+	# Detectar movimiento horizontal
+	velocity.x = 0
+	if Input.is_action_pressed("move_right"):
+		velocity.x += speed
+	if Input.is_action_pressed("move_left"):
+		velocity.x -= speed
+
+	# Aplicar gravedad si no estamos en el suelo
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-	else:
-		jump_count = 0  # Restablecer el contador de saltos cuando esté en el suelo
+		velocity.y += gravity * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and jump_count < MAX_JUMPS:
-		velocity.y = JUMP_VELOCITY
-		jump_count += 1  # Incrementar el contador de saltos
+ # Manejo del salto y doble salto
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():  # Si el personaje está en el suelo, salta normalmente
+			velocity.y = jump_force
+			can_double_jump = true  # Habilitar el doble salto después de un salto normal
+		elif can_double_jump:  # Si no está en el suelo pero puede hacer doble salto
+			velocity.y = jump_force
+			can_double_jump = false  # Deshabilitar el doble salto hasta que vuelva al suelo
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	# Mover al personaje con la propiedad integrada 'velocity'
 	move_and_slide()
+	
+	# Resetear el doble salto cuando el personaje está en el suelo
+	if is_on_floor():
+		can_double_jump = true
