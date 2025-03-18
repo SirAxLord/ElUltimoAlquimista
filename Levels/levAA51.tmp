@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgcrh21qnt1cj"]
+
+[ext_resource type="PackedScene" uid="uid://dm674q5p0rr33" path="res://Escenas/Escenario/Prueba.tscn" id="1_yfy6x"]
+[ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="2_d7nys"]
+[ext_resource type="PackedScene" uid="uid://bwslklrr4oj73" path="res://Escenas/Escenario/Platform.tscn" id="5_5ot73"]
+[ext_resource type="PackedScene" uid="uid://b7ydsxoghsfup" path="res://Escenas/Menus/Menu_pausa.tscn" id="5_121ba"]
+[ext_resource type="PackedScene" uid="uid://bhb0udmgfa6r3" path="res://Escenas/Characters/Goblin.tscn" id="6_soksy"]
+[ext_resource type="PackedScene" uid="uid://bb4x6cprcomph" path="res://Sprite/Malachar/Malachar.tscn" id="7_ddf46"]
+[ext_resource type="PackedScene" uid="uid://dj8ouf8birocj" path="res://Escenas/Escenario/Trap.tscn" id="7_jbie4"]
+[ext_resource type="PackedScene" uid="uid://uhau1y1ua1d7" path="res://Escenas/HUD/hud-vidas.tscn" id="8_g67gj"]
+[ext_resource type="PackedScene" uid="uid://bswjquiex8a1d" path="res://Escenas/HUD/hud-inventario.tscn" id="8_vxqkw"]
+[ext_resource type="PackedScene" uid="uid://caiaklnmp1yge" path="res://Escenas/Items/Item.tscn" id="10_je8vo"]
+
+[node name="LevelPrueba" type="Node2D"]
+position = Vector2(305, -4)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_yfy6x")]
+position = Vector2(274, 465)
+scale = Vector2(1.45, 1)
+
+[node name="Character" parent="StaticBody2D" instance=ExtResource("2_d7nys")]
+visible = false
+position = Vector2(-360, 128)
+scale = Vector2(0.689655, 1)
+
+[node name="Platform1" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(-251.724, 45)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform2" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(-217.931, 45)
+scale = Vector2(0.93793, 1.56)
+
+[node name="platform3" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(-184.138, 45)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform4" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(-48.9655, 41)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform5" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(-15.1724, 41)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform6" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(18.6207, 41)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Goblin" parent="StaticBody2D" instance=ExtResource("6_soksy")]
+position = Vector2(349.655, 107)
+scale = Vector2(0.344828, 0.5)
+
+[node name="Trap" parent="StaticBody2D" instance=ExtResource("7_jbie4")]
+position = Vector2(17, 11)
+scale = Vector2(0.689655, 1)
+
+[node name="Item" parent="StaticBody2D" instance=ExtResource("10_je8vo")]
+position = Vector2(-253.793, 17)
+
+[node name="Malachar" parent="StaticBody2D" instance=ExtResource("7_ddf46")]
+position = Vector2(-190.345, 127)
+scale = Vector2(1.1, 1.2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuPausa" parent="CanvasLayer" instance=ExtResource("5_121ba")]
+process_mode = 3
+visible = false
+
+[node name="VidasJugador3" parent="CanvasLayer" instance=ExtResource("8_g67gj")]
+visible = false
+
+[node name="VidasJugador2" parent="CanvasLayer" instance=ExtResource("8_g67gj")]
+visible = false
+layout_direction = 3
+
+[node name="hud inventario" parent="CanvasLayer" instance=ExtResource("8_vxqkw")]
+visible = false
+offset_top = 204.0
+offset_bottom = 204.0
