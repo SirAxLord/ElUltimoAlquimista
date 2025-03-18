@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgcrh21qnt1cj"]
+[gd_scene load_steps=11 format=3 uid="uid://dgcrh21qnt1cj"]
 
 [ext_resource type="PackedScene" uid="uid://dm674q5p0rr33" path="res://Escenas/Escenario/Prueba.tscn" id="1_yfy6x"]
 [ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="2_d7nys"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dj8ouf8birocj" path="res://Escenas/Escenario/Trap.tscn" id="7_jbie4"]
 [ext_resource type="PackedScene" uid="uid://uhau1y1ua1d7" path="res://Escenas/HUD/hud-vidas.tscn" id="8_g67gj"]
 [ext_resource type="PackedScene" uid="uid://bswjquiex8a1d" path="res://Escenas/HUD/hud-inventario.tscn" id="8_vxqkw"]
-[ext_resource type="Script" path="res://Sprite/Malachar/malachar_script.gd" id="8_ya5ew"]
 [ext_resource type="PackedScene" uid="uid://caiaklnmp1yge" path="res://Escenas/Items/Item.tscn" id="10_je8vo"]
 
 [node name="LevelPrueba" type="Node2D"]
@@ -20,6 +19,7 @@ position = Vector2(274, 465)
 scale = Vector2(1.45, 1)
 
 [node name="Character" parent="StaticBody2D" instance=ExtResource("2_d7nys")]
+visible = false
 position = Vector2(-360, 128)
 scale = Vector2(0.689655, 1)
 
@@ -61,7 +61,6 @@ position = Vector2(-253.793, 17)
 [node name="Malachar" parent="StaticBody2D" instance=ExtResource("7_ddf46")]
 position = Vector2(-190.345, 127)
 scale = Vector2(1.1, 1.2)
-script = ExtResource("8_ya5ew")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
