@@ -12,6 +12,7 @@ func _ready():
 	player = get_parent().get_node("Character")
 
 func _physics_process(delta):
+	animaciones()
 	# Aplicar gravedad para que el enemigo caiga
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -49,3 +50,17 @@ func enemigo_dañado():
 	)
 	global_position = random_position  # Cambiar la posición
 	show()  # Mostrar al enemigo de nuevo
+	
+	#Animaciones
+func animaciones():
+	if is_on_floor():
+		if velocity.x !=0:
+			$AnimatedSprite2D.scale.x = 1*sign(velocity.x)
+			$AnimatedSprite2D.play("walk")
+		else:
+			$AnimatedSprite2D.play("Idle")
+	#else:
+		#if velocity.y < 0:
+			#$AnimatedSprite2D.play("jump")
+		#else:
+			#$AnimatedSprite2D.play("fall")
