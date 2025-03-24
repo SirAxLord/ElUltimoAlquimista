@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1742702533
+::res://::1742800239
 icon.svg::CompressedTexture2D::3987080476606567377::1742701575::1742701634::1::::<><>::
 item.gd::GDScript::-1::1742701575::0::1::::Bottle<>Area2D<>::
 ::res://Escenas/::1742702490
@@ -7,15 +7,15 @@ juego1player.tscn::PackedScene::8851451722849995321::1742701586::0::1::::<><>::r
 juego2player.tscn::PackedScene::3958001077185856464::1742701586::0::1::::<><>::
 menu.tscn::PackedScene::568165715807471176::1742701586::0::1::::<><>::uid://tnohgo3qmlxk::::res://Resources/image1_0 (1).jpg<>res://Scripts/menu.gd<>uid://dqudtuq5e2fbl::::res://Resources/upscalemedia-transformed.png
 personajes.tscn::PackedScene::5267413843260869554::1742701586::0::1::::<><>::res://Scripts/personajes.gd<>uid://0locsr3oy6l5::::res://Imagen/Diseño sin título.png
-::res://Escenas/Characters/::1742702490
-Character.tscn::PackedScene::7314962747516747515::1742701640::0::1::::<><>::res://Scripts/Jugador/character.gd<>uid://c6m5poruf0f34::::res://Resources/Character/human1x4.png<>uid://cfaeof1avohlo::::res://Sprite/Alden/Alden_img/idle.png
-Goblin.tscn::PackedScene::2881360783997681130::1742701640::0::1::::<><>::res://Scripts/Enemies/goblin.gd<>uid://dxcufldwtdj81::::res://Resources/Character/goblin4x.png<>uid://b4jtrncyg44t8::::res://Sprite/Goblin/Goblin_img/thrust.png<>uid://dbb14fhq64pdv::::res://Sprite/Goblin/Goblin_img/idle.png<>uid://dauqis5kmk0w5::::res://Sprite/Goblin/Goblin_img/walk.png<>uid://r8gicx74piml::::res://Sprite/Goblin/Goblin_img/hurt.png
+::res://Escenas/Characters/::1742800184
+Character.tscn::PackedScene::7314962747516747515::1742800184::0::1::::<><>::res://Scripts/Jugador/character.gd<>uid://cfaeof1avohlo::::res://Sprite/Alden/Alden_img/idle.png
+Goblin.tscn::PackedScene::2881360783997681130::1742800184::0::1::::<><>::res://Scripts/Enemies/goblin.gd<>uid://b4jtrncyg44t8::::res://Sprite/Goblin/Goblin_img/thrust.png<>uid://dbb14fhq64pdv::::res://Sprite/Goblin/Goblin_img/idle.png<>uid://dauqis5kmk0w5::::res://Sprite/Goblin/Goblin_img/walk.png<>uid://r8gicx74piml::::res://Sprite/Goblin/Goblin_img/hurt.png
 Minotaur.tscn::PackedScene::6529556165565066339::1742701586::0::1::::<><>::res://Scripts/Enemies/goblin.gd<>uid://men7h2gh2kg4::::res://Resources/Character/minotaur4x.png
 Orc.tscn::PackedScene::377327095226122318::1742701586::0::1::::<><>::res://Scripts/Enemies/goblin.gd<>uid://dlvwpkcb8x2il::::res://Resources/Character/orc4x.png
-::res://Escenas/Escenario/::1742702490
+::res://Escenas/Escenario/::1742708194
 Platform.tscn::PackedScene::3968420392992613920::1742701586::0::1::::<><>::uid://mljuxa1w0wr0::::res://Scripts/Enemies/parallax_mountain_pack/barrier.png
 Prueba.tscn::PackedScene::8067519504336677008::1742701586::0::1::::<><>::uid://c0dn1ek7jeb44::::res://Resources/Floor/forest-1.png
-Trap.tscn::PackedScene::7859972177134502637::1742701640::0::1::::<><>::res://Scripts/Escenario/Trap.gd<>uid://m371jf5b61rv::::res://Scripts/Enemies/parallax_mountain_pack/cactus-1.png
+Trap.tscn::PackedScene::7859972177134502637::1742708194::0::1::::<><>::res://Scripts/Escenario/Trap.gd<>uid://m371jf5b61rv::::res://Scripts/Enemies/parallax_mountain_pack/cactus-1.png
 ::res://Escenas/HUD/::1742702490
 corazonRojo.png::CompressedTexture2D::6744039478662384821::1742701586::1742701634::1::::<><>::
 corazonVacio.png::CompressedTexture2D::7491896819797718401::1742701586::1742701634::1::::<><>::
@@ -23,15 +23,15 @@ hud-inventario.tscn::PackedScene::3695812268443589103::1742701587::0::1::::<><>:
 hud-vidas.tscn::PackedScene::1418264636807651694::1742701587::0::1::::<><>::uid://d0hm2ap184tpv::::res://Escenas/HUD/pixil-frame-0.png<>uid://c3c4lyx3mvort::::res://Escenas/HUD/corazonRojo.png<>uid://de0epfvikq3qr::::res://Escenas/HUD/corazonVacio.png
 Inventario.png::CompressedTexture2D::6035096409147681970::1742701587::1742701634::1::::<><>::
 pixil-frame-0.png::CompressedTexture2D::8929210631055809623::1742701587::1742701634::1::::<><>::
-::res://Escenas/Items/::1742702490
-Item.tscn::PackedScene::4789374845763358256::1742701640::0::1::::<><>::res://item.gd<>uid://cdp6j46b2cihq::::res://Resources/Items/bottle-2.png
+::res://Escenas/Items/::1742708194
+Item.tscn::PackedScene::4789374845763358256::1742708194::0::1::::<><>::res://item.gd<>uid://cdp6j46b2cihq::::res://Resources/Items/bottle-2.png
 ::res://Escenas/Menus/::1742702490
 menu_dead.tscn::PackedScene::8788584618139619727::1742701587::0::1::::<><>::res://Scripts/Menu/menu_dead.gd
 Menu_pausa.tscn::PackedScene::4682224271423155467::1742701587::0::1::::<><>::res://Scripts/Menu/menu_pausa.gd
 Menu_personajes.tscn::PackedScene::5267413843260869554::1742701587::0::1::::<><>::res://Scripts/Menu/personajes.gd<>uid://0locsr3oy6l5::::res://Resources/Diseño sin título.png
 Menu_Principal.tscn::PackedScene::568165715807471176::1742701587::0::1::::<><>::res://Scripts/Menu/menu.gd<>uid://tnohgo3qmlxk::::res://Resources/image1_0 (1).jpg<>uid://dqudtuq5e2fbl::::res://Resources/upscalemedia-transformed.png
-::res://Levels/::1742702489
-level_prueba.tscn::PackedScene::7585570016890465949::1742701640::0::1::::<><>::uid://dm674q5p0rr33::::res://Escenas/Escenario/Prueba.tscn<>uid://dchomrc7mvnr4::::res://Escenas/Characters/Character.tscn<>uid://bwslklrr4oj73::::res://Escenas/Escenario/Platform.tscn<>uid://b7ydsxoghsfup::::res://Escenas/Menus/Menu_pausa.tscn<>uid://bhb0udmgfa6r3::::res://Escenas/Characters/Goblin.tscn<>uid://bb4x6cprcomph::::res://Sprite/Malachar/Malachar.tscn<>uid://dj8ouf8birocj::::res://Escenas/Escenario/Trap.tscn<>uid://uhau1y1ua1d7::::res://Escenas/HUD/hud-vidas.tscn<>uid://bswjquiex8a1d::::res://Escenas/HUD/hud-inventario.tscn<>res://Sprite/Malachar/malachar_script.gd<>uid://caiaklnmp1yge::::res://Escenas/Items/Item.tscn
+::res://Levels/::1742800184
+level_prueba.tscn::PackedScene::7585570016890465949::1742800184::0::1::::<><>::uid://dm674q5p0rr33::::res://Escenas/Escenario/Prueba.tscn<>uid://dchomrc7mvnr4::::res://Escenas/Characters/Character.tscn<>uid://bwslklrr4oj73::::res://Escenas/Escenario/Platform.tscn<>uid://b7ydsxoghsfup::::res://Escenas/Menus/Menu_pausa.tscn<>uid://bhb0udmgfa6r3::::res://Escenas/Characters/Goblin.tscn<>uid://bb4x6cprcomph::::res://Sprite/Malachar/Malachar.tscn<>uid://dj8ouf8birocj::::res://Escenas/Escenario/Trap.tscn<>uid://uhau1y1ua1d7::::res://Escenas/HUD/hud-vidas.tscn<>uid://bswjquiex8a1d::::res://Escenas/HUD/hud-inventario.tscn<>uid://caiaklnmp1yge::::res://Escenas/Items/Item.tscn
 ::res://Resources/::1742702490
 Diseño sin título.png::CompressedTexture2D::1778283828705865200::1742701587::1742701634::1::::<><>::
 image1_0 (1).jpg::CompressedTexture2D::1361287816442878244::1742701587::1742701634::1::::<><>::
@@ -60,8 +60,8 @@ bottle-2.png::CompressedTexture2D::5016273434679796030::1742701588::1742701634::
 ::res://Scripts/::1742702490
 menu.gd::GDScript::-1::1742701588::0::1::::<>Control<>::
 personajes.gd::GDScript::-1::1742701588::0::1::::<>Control<>::
-::res://Scripts/Enemies/::1742702490
-goblin.gd::GDScript::-1::1742701588::0::1::::Goblin<>CharacterBody2D<>::
+::res://Scripts/Enemies/::1742799202
+goblin.gd::GDScript::-1::1742799202::0::1::::Goblin<>CharacterBody2D<>::
 Minotaur.gd::GDScript::-1::1742701588::0::1::::Minotaur<>CharacterBody2D<>::
 Orc.gd::GDScript::-1::1742701588::0::1::::Orc<>CharacterBody2D<>::
 ::res://Scripts/Enemies/parallax_mountain_pack/::1742702490
@@ -76,8 +76,8 @@ parallax-mountain-mountains.png::CompressedTexture2D::8923066009767950614::17427
 parallax-mountain-trees.png::CompressedTexture2D::3387344776729137741::1742701589::1742701634::1::::<><>::
 ::res://Scripts/Escenario/::1742702490
 Trap.gd::GDScript::-1::1742701589::0::1::::CactusTrap<>Area2D<>::
-::res://Scripts/Jugador/::1742702490
-character.gd::GDScript::-1::1742701589::0::1::::Character<>CharacterBody2D<>::
+::res://Scripts/Jugador/::1742796524
+character.gd::GDScript::-1::1742796524::0::1::::Character<>CharacterBody2D<>::
 player.gd::GDScript::-1::1742701589::0::1::::<>CharacterBody2D<>::
 ::res://Scripts/Menu/::1742702490
 menu.gd::GDScript::-1::1742701589::0::1::::<>Control<>::
@@ -100,14 +100,14 @@ hurt.png::CompressedTexture2D::1261713538108849483::1742701589::1742701634::1:::
 idle.png::CompressedTexture2D::7233145976506497487::1742701589::1742701634::1::::<><>::
 thrust.png::CompressedTexture2D::4441661217334327139::1742701589::1742701634::1::::<><>::
 walk.png::CompressedTexture2D::7201536356631249342::1742701590::1742701634::1::::<><>::
-::res://Sprite/Malachar/::1742702490
-Malachar.tscn::PackedScene::2517928461637953445::1742701640::0::1::::<><>::uid://cu6q1xodfgyui::::res://Sprite/Malachar/Malacar_img/custom/thrust_oversize.png<>uid://by0p58tvtie6::::res://Sprite/Malachar/Malacar_img/standard/jump.png<>uid://cd404f18aiu3i::::res://Sprite/Malachar/Malacar_img/standard/idle.png<>uid://b4p4rabbd2kdg::::res://Sprite/Malachar/Malacar_img/standard/run.png
-malachar_script.gd::GDScript::-1::1742701590::0::1::::Malachar<>CharacterBody2D<>::
+::res://Sprite/Malachar/::1742800184
+Malachar.tscn::PackedScene::2517928461637953445::1742800184::0::1::::<><>::uid://cu6q1xodfgyui::::res://Sprite/Malachar/Malacar_img/custom/thrust_oversize.png<>res://Sprite/Malachar/malachar_script.gd<>uid://by0p58tvtie6::::res://Sprite/Malachar/Malacar_img/standard/jump.png<>uid://cd404f18aiu3i::::res://Sprite/Malachar/Malacar_img/standard/idle.png<>uid://b4p4rabbd2kdg::::res://Sprite/Malachar/Malacar_img/standard/run.png
+malachar_script.gd::GDScript::-1::1742800138::0::1::::Malachar<>CharacterBody2D<>::
 ::res://Sprite/Malachar/Malacar_img/::1742702490
 character.json::JSON::-1::1742701590::0::1::::<><>::
 ::res://Sprite/Malachar/Malacar_img/custom/::1742702490
 thrust_oversize.png::CompressedTexture2D::6241633082856060912::1742701590::1742701634::1::::<><>::
-::res://Sprite/Malachar/Malacar_img/standard/::1742702483
+::res://Sprite/Malachar/Malacar_img/standard/::1742702533
 backslash.png::CompressedTexture2D::5389762496161146137::1742702386::1742702533::1::::<><>::
 idle.png::CompressedTexture2D::5044844870291809392::1742701590::1742701634::1::::<><>::
 jump.png::CompressedTexture2D::121280249034344399::1742701590::1742701634::1::::<><>::
