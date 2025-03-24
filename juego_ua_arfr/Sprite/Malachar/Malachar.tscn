@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://bb4x6cprcomph"]
+[gd_scene load_steps=33 format=3 uid="uid://bb4x6cprcomph"]
 
 [ext_resource type="Texture2D" uid="uid://cu6q1xodfgyui" path="res://Sprite/Malachar/Malacar_img/custom/thrust_oversize.png" id="1_8vqal"]
+[ext_resource type="Script" path="res://Sprite/Malachar/malachar_script.gd" id="1_j6jn8"]
 [ext_resource type="Texture2D" uid="uid://by0p58tvtie6" path="res://Sprite/Malachar/Malacar_img/standard/jump.png" id="2_l5lqy"]
 [ext_resource type="Texture2D" uid="uid://cd404f18aiu3i" path="res://Sprite/Malachar/Malacar_img/standard/idle.png" id="3_axfiv"]
 [ext_resource type="Texture2D" uid="uid://b4p4rabbd2kdg" path="res://Sprite/Malachar/Malacar_img/standard/run.png" id="4_famf3"]
@@ -136,7 +137,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ppva")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataque",
 "speed": 11.0
 }, {
@@ -214,6 +215,8 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_j6jn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.5)
@@ -221,6 +224,7 @@ shape = SubResource("RectangleShape2D_2vsqc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a1i0y")
-animation = &"ataque"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.890557
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

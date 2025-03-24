@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://dchomrc7mvnr4"]
+[gd_scene load_steps=31 format=3 uid="uid://dchomrc7mvnr4"]
 
 [ext_resource type="Script" path="res://Scripts/Jugador/character.gd" id="1_5qrd7"]
-[ext_resource type="Texture2D" uid="uid://c6m5poruf0f34" path="res://Resources/Character/human1x4.png" id="1_nne54"]
 [ext_resource type="Texture2D" uid="uid://cfaeof1avohlo" path="res://Sprite/Alden/Alden_img/idle.png" id="2_gv655"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j202b"]
@@ -126,7 +125,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wq7mq")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataque",
 "speed": 5.0
 }, {
@@ -203,26 +202,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yscb5"]
-size = Vector2(23.8095, 29.5238)
+size = Vector2(24, 49)
 
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
-scale = Vector2(0.7, 0.7)
 script = ExtResource("1_5qrd7")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.14286, 6.42857)
-scale = Vector2(0.647321, 0.691964)
 sprite_frames = SubResource("SpriteFrames_d30d1")
-animation = &"idle"
-frame_progress = 0.219046
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_nne54")
+animation = &"ataque"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.14286, 6.42857)
-scale = Vector2(1.5, 1.5)
+position = Vector2(3, 12.5)
 shape = SubResource("RectangleShape2D_yscb5")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgcrh21qnt1cj"]
+[gd_scene load_steps=11 format=3 uid="uid://dgcrh21qnt1cj"]
 
 [ext_resource type="PackedScene" uid="uid://dm674q5p0rr33" path="res://Escenas/Escenario/Prueba.tscn" id="1_yfy6x"]
 [ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="2_d7nys"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dj8ouf8birocj" path="res://Escenas/Escenario/Trap.tscn" id="7_jbie4"]
 [ext_resource type="PackedScene" uid="uid://uhau1y1ua1d7" path="res://Escenas/HUD/hud-vidas.tscn" id="8_g67gj"]
 [ext_resource type="PackedScene" uid="uid://bswjquiex8a1d" path="res://Escenas/HUD/hud-inventario.tscn" id="8_vxqkw"]
-[ext_resource type="Script" path="res://Sprite/Malachar/malachar_script.gd" id="8_ya5ew"]
 [ext_resource type="PackedScene" uid="uid://caiaklnmp1yge" path="res://Escenas/Items/Item.tscn" id="10_je8vo"]
 
 [node name="LevelPrueba" type="Node2D"]
@@ -20,8 +19,7 @@ position = Vector2(274, 465)
 scale = Vector2(1.45, 1)
 
 [node name="Character" parent="StaticBody2D" instance=ExtResource("2_d7nys")]
-position = Vector2(-360, 128)
-scale = Vector2(1, 1.799)
+position = Vector2(-355.862, 97)
 
 [node name="Platform1" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
 position = Vector2(-251.724, 45)
@@ -48,8 +46,7 @@ position = Vector2(18.6207, 41)
 scale = Vector2(0.93793, 1.56)
 
 [node name="Goblin" parent="StaticBody2D" instance=ExtResource("6_soksy")]
-position = Vector2(349.655, 107)
-scale = Vector2(0.344828, 0.5)
+position = Vector2(253.103, 127)
 
 [node name="Trap" parent="StaticBody2D" instance=ExtResource("7_jbie4")]
 position = Vector2(17, 11)
@@ -58,10 +55,44 @@ scale = Vector2(0.689655, 1)
 [node name="Item" parent="StaticBody2D" instance=ExtResource("10_je8vo")]
 position = Vector2(-253.793, 17)
 
+[node name="Platform7" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(136.552, 40)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform8" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(170.345, 40)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform9" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(204.138, 40)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform10" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(-148.276, -85)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform11" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(-114.483, -85)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform12" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(-80.6897, -85)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform13" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(51.7241, -85)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform14" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(85.5172, -85)
+scale = Vector2(0.93793, 1.56)
+
+[node name="Platform15" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
+position = Vector2(119.31, -85)
+scale = Vector2(0.93793, 1.56)
+
 [node name="Malachar" parent="StaticBody2D" instance=ExtResource("7_ddf46")]
-position = Vector2(-190.345, 127)
-scale = Vector2(1.1, 1.5)
-script = ExtResource("8_ya5ew")
+position = Vector2(85.5172, -133)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
