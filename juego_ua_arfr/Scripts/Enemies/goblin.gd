@@ -46,7 +46,7 @@ func _physics_process(delta):
 func atacar():
 	is_attacking = true
 	velocity.x = 0  # Detener al goblin mientras ataca
-	$AnimatedSprite2D.play("Ataque")  # Reproducir la animación de ataque
+	$AnimatedSprite2D.play("attack")  # Reproducir la animación de ataque
 
 func recibir_dano(dano):
 	vida -= dano
