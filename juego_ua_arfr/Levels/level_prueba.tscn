@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgcrh21qnt1cj"]
+[gd_scene load_steps=13 format=3 uid="uid://dgcrh21qnt1cj"]
 
 [ext_resource type="PackedScene" uid="uid://dm674q5p0rr33" path="res://Escenas/Escenario/Prueba.tscn" id="1_yfy6x"]
 [ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="2_d7nys"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dj8ouf8birocj" path="res://Escenas/Escenario/Trap.tscn" id="7_jbie4"]
 [ext_resource type="PackedScene" uid="uid://uhau1y1ua1d7" path="res://Escenas/HUD/hud-vidas.tscn" id="8_g67gj"]
 [ext_resource type="PackedScene" uid="uid://bswjquiex8a1d" path="res://Escenas/HUD/hud-inventario.tscn" id="8_vxqkw"]
+[ext_resource type="PackedScene" uid="uid://fm1r0t2m3bec" path="res://Escenas/Characters/Orc.tscn" id="9_3oqp3"]
 [ext_resource type="PackedScene" uid="uid://caiaklnmp1yge" path="res://Escenas/Items/Item.tscn" id="10_je8vo"]
+[ext_resource type="PackedScene" uid="uid://c0a73oq1d2xfv" path="res://Escenas/Characters/Minotaur.tscn" id="11_7p6jl"]
 
 [node name="LevelPrueba" type="Node2D"]
 position = Vector2(305, -4)
@@ -93,6 +95,14 @@ scale = Vector2(0.93793, 1.56)
 
 [node name="Malachar" parent="StaticBody2D" instance=ExtResource("7_ddf46")]
 position = Vector2(85.5172, -133)
+
+[node name="Minotaur" parent="StaticBody2D" instance=ExtResource("11_7p6jl")]
+position = Vector2(-53.1035, 104)
+scale = Vector2(1.1, 1.65)
+
+[node name="Orc" parent="StaticBody2D" instance=ExtResource("9_3oqp3")]
+position = Vector2(91.7242, 113)
+scale = Vector2(1.25, 1.467)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

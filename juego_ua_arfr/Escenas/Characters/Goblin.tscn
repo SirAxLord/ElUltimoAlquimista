@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dauqis5kmk0w5" path="res://Sprite/Goblin/Goblin_img/walk.png" id="4_66pbk"]
 [ext_resource type="Texture2D" uid="uid://r8gicx74piml" path="res://Sprite/Goblin/Goblin_img/hurt.png" id="4_vhxej"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2hqq"]
+atlas = ExtResource("3_btvyj")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of4x7"]
+atlas = ExtResource("3_btvyj")
+region = Rect2(64, 64, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7r2n3"]
 atlas = ExtResource("2_c8cg3")
 region = Rect2(0, 192, 64, 64)
@@ -37,14 +45,6 @@ region = Rect2(384, 192, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkdk8"]
 atlas = ExtResource("2_c8cg3")
 region = Rect2(448, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ymtst"]
-atlas = ExtResource("3_btvyj")
-region = Rect2(0, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4yjh"]
-atlas = ExtResource("3_btvyj")
-region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ncg8"]
 atlas = ExtResource("4_vhxej")
@@ -102,6 +102,17 @@ region = Rect2(512, 192, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_f2hqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of4x7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7r2n3")
 }, {
 "duration": 1.0,
@@ -126,19 +137,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_tkdk8")
 }],
 "loop": false,
-"name": &"Ataque",
+"name": &"attack",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ymtst")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m4yjh")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -203,7 +203,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6s56k")
-animation = &"walk"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 6)

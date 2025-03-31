@@ -1,37 +1,85 @@
 class_name Minotaur
 extends CharacterBody2D
 
-const SPEED = 100.0
-const MOVE_RANGE = 300.0  # Rango de movimiento más grande en el eje X
-const RESPAWN_TIME = 2.0  # Tiempo de reaparición en segundos
+@export var speed := 120.0  # Velocidad del Minotauro
+@export var gravity := 1000.0  # Fuerza de gravedad
+@export var max_fall_speed := 500.0  # Velocidad máxima de caída
+@export var detection_range := 0  # Rango para detectar al personaje
+@export var attack_range := 40.0  # Rango de ataque
+@export var vida := 150  # Vida del Minotauro
+@export var fuerza := 20  # Daño que inflige
+@export var respawn_time := 3.0  # Tiempo de reaparición
 
-var direction = Vector2()
-var target = null
+var barra_vida
+var player: Node2D = null
+var is_attacking := false
 
-func _ready() -> void:
-	# Establece una posición aleatoria inicial dentro del rango de movimiento
-	position.x += randi() % int(MOVE_RANGE) - MOVE_RANGE / 2
-	# Establece una dirección aleatoria inicial
-	direction = Vector2(randi() % 2 * 2 - 1, 0)
-	# Encuentra el nodo del personaje
-	target = get_parent().get_node("Character")
+func _ready():
+	barra_vida = $ProgressBar
+	barra_vida.max_value = vida
+	barra_vida.value = vida
+	player = get_parent().get_node("Character")
 
-func _physics_process(delta: float) -> void:
-	if target != null:
-		# Seguir al personaje
-		direction.x = (target.position - position).normalized().x
-		velocity.x = direction.x * SPEED
-		move_and_slide()
+func _physics_process(delta):
+	animaciones()
+	
+	if not is_on_floor():
+		velocity.y += gravity * delta
+		velocity.y = min(velocity.y, max_fall_speed)
+	
+	if player and not is_attacking:
+		var distance_to_player = global_position.distance_to(player.global_position)
+		
+		if distance_to_player <= attack_range:
+			atacar()
+		elif distance_to_player <= detection_range:
+			var direction = (player.global_position - global_position).normalized()
+			velocity.x = direction.x * speed
+		else:
+			velocity.x = 0
+	else:
+		velocity.x = 0
+	
+	move_and_slide()
 
-		# Comprobar colisión con el personaje
-		if position.distance_to(target.position) < 20.0 and is_on_floor():
-			await enemy_dies()
+func atacar():
+	is_attacking = true
+	velocity.x = 0
+	$AnimatedSprite2D.play("attack")
 
-func enemy_dies() -> void:
-	# Desaparecer el enemigo
+func recibir_dano(dano):
+	vida -= dano
+	barra_vida.value = vida
+	if vida <= 0:
+		morir()
+
+func morir():
+	print("El Minotauro ha muerto.")
 	queue_free()
-	# Volver a generar el enemigo después de un tiempo
-	await get_tree().create_timer(RESPAWN_TIME).timeout
-	var new_enemy = Minotaur.new()
-	get_parent().add_child(new_enemy)
-	new_enemy.position = Vector2(randi() % int(MOVE_RANGE) - MOVE_RANGE / 2, position.y)
+	respawn()
+
+func respawn():
+	await get_tree().create_timer(respawn_time).timeout
+	var new_minotaur = Minotaur.new()
+	get_parent().add_child(new_minotaur)
+	new_minotaur.position = global_position + Vector2(randf_range(-100, 100), 0)
+
+func _on_animated_sprite_2d_animation_finished():
+	is_attacking = false
+
+func _on_area_2d_body_entered(body):
+	if body.name == "Character":
+		if body.has_method("recibir_dano"):
+			body.recibir_dano(fuerza)
+		recibir_dano(body.fuerza)
+
+func animaciones():
+	if is_attacking:
+		return
+	
+	if is_on_floor():
+		if velocity.x != 0:
+			$AnimatedSprite2D.scale.x = 1 * sign(velocity.x)
+			$AnimatedSprite2D.play("walk")
+		else:
+			$AnimatedSprite2D.play("idle")

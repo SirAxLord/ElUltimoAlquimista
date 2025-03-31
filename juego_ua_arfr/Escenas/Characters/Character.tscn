@@ -215,7 +215,6 @@ animation = &"ataque"
 frame = 5
 frame_progress = 1.0
 
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 12.5)
 shape = SubResource("RectangleShape2D_yscb5")
