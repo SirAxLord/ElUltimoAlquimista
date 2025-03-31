@@ -15,6 +15,10 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Character":  # Verifica que el nodo que entra es el personaje
 		print("Ítem recogido")
 
+		# Restaurar vida al personaje
+		if body.has_method("recibir_dano"):  # Verifica que el personaje tenga el método
+			body.recibir_dano(-15)  # Llama a recibir_dano con valor negativo para "curar"
+
 		# Ocultar el ítem después de recogerlo
 		hide()
 		set_deferred("monitoring", false)  # Desactiva las colisiones de manera segura

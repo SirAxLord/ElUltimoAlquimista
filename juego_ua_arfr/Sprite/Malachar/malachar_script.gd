@@ -4,6 +4,12 @@ extends CharacterBody2D
 @export var speed := 200.0  # Velocidad horizontal máxima
 @export var jump_force := -400.0  # Fuerza del salto
 @export var gravity := 1000.0  # Gravedad personalizada
+@export var max_fall_speed := 500.0  # Velocidad máxima al caer
+@export var detection_range := 0.0  # Rango para detectar al personaje (mayor que el goblin)
+@export var attack_range := 50.0  # Rango para atacar al personaje (mayor alcance)
+@export var jump_cooldown := 2.0  # Tiempo mínimo entre cada salto
+@export var vida := 120  # Vida del enemigo
+@export var fuerza := 20  # Fuerza del ataque del enemigo
 
 var can_double_jump := true  # Permite controlar si el personaje puede hacer doble salto
 
@@ -31,6 +37,24 @@ func _physics_process(delta):
 
 	# Mover al personaje con la propiedad integrada 'velocity'
 	move_and_slide()
+
+func seguir_al_personaje(_delta):
+	# Calcular la dirección hacia el personaje
+	var direction = (player.global_position - global_position).normalized()
+	velocity.x = direction.x * speed
+
+	# Obtener el tiempo actual en milisegundos
+	var current_time = Time.get_ticks_msec()
+
+	# Saltar si el jugador está por encima y ha pasado el cooldown
+	if player.global_position.y < global_position.y - 50 and is_on_floor() and (current_time - last_jump_time > jump_cooldown * 1000):
+		velocity.y = jump_force
+		last_jump_time = current_time
+
+func atacar():
+	is_attacking = true
+	velocity.x = 0  # Detener al goblin mientras ataca
+	$AnimatedSprite2D.play("ataque")  # Reproducir la animación de ataque
 	
 	# Resetear el doble salto cuando el personaje está en el suelo
 	if is_on_floor():
