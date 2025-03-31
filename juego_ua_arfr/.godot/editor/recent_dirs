@@ -1,3 +1,5 @@
+res://Escenas
+res://Resources/themes
 res://Sprite/Alden/Alden_img
 res://Sprite/Goblin/Goblin_img
 res://Sprite/Malachar/Malacar_img/custom
@@ -10,4 +12,3 @@ res://Escenas/Escenario
 res://Scripts/Enemies
 res://Scripts/Jugador
 res://Levels
-res://Escenas

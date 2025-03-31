@@ -5,9 +5,12 @@ extends CharacterBody2D
 @export var jump_force := -500.0  # Fuerza del salto del jefe
 @export var gravity := 1000.0  # Gravedad personalizada
 @export var max_fall_speed := 500.0  # Velocidad máxima al caer
-@export var detection_range := 300.0  # Rango para detectar al personaje (mayor que el goblin)
+@export var detection_range := 0.0  # Rango para detectar al personaje (mayor que el goblin)
 @export var attack_range := 50.0  # Rango para atacar al personaje (mayor alcance)
 @export var jump_cooldown := 2.0  # Tiempo mínimo entre cada salto
+@export var vida := 120  # Vida del enemigo
+@export var fuerza := 20  # Fuerza del ataque del enemigo
+
 
 var player: Node2D = null  # Referencia al nodo del personaje
 var is_attacking := false  # Indica si está atacando
@@ -39,7 +42,8 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func seguir_al_personaje(delta):
+func seguir_al_personaje(_delta):
+
 	# Calcular la dirección hacia el personaje
 	var direction = (player.global_position - global_position).normalized()
 	velocity.x = direction.x * speed

@@ -4,9 +4,17 @@ extends CharacterBody2D
 @export var speed := 200.0  # Velocidad horizontal máxima
 @export var jump_force := -400.0  # Fuerza del salto
 @export var gravity := 1000.0  # Gravedad personalizada
+@export var vida := 100  # Vida del personaje
+@export var fuerza := 15  # Fuerza del ataque del personaje
 
+var barra_vida  # Variable para referenciar la barra de vida
 var can_double_jump := true  # Permite controlar si el personaje puede hacer doble salto
 var is_attacking := false  # Indica si se está ejecutando la animación de ataque
+
+func _ready():
+	barra_vida = $ProgressBar  # Aquí referenciamos el ProgressBar en el árbol de nodos
+	barra_vida.max_value = vida  # Configuramos el máximo de la barra según la vida inicial
+	barra_vida.value = vida  # Inicializamos la barra con el valor de vida actual
 
 
 func _physics_process(delta):
@@ -45,6 +53,16 @@ func _physics_process(delta):
 
 func _on_animated_sprite_2d_animation_finished():
 		is_attacking = false
+
+func recibir_dano(dano):
+	vida -= dano
+	barra_vida.value = vida  # Actualiza la barra de vida con el nuevo valor
+	if vida <= 0:
+		morir()
+		
+func morir():
+	print("El jugador ha muerto.")  # Mensaje de depuración
+	get_tree().change_scene_to_file("res://Escenas/Menus/menu_dead.tscn")  # Cambiar a la escena de muerte
 
 #Animaciones
 func animaciones():
