@@ -16,6 +16,7 @@ func _ready():
 	barra_vida.max_value = vida  # Configuramos el máximo de la barra según la vida inicial
 	barra_vida.value = vida  # Inicializamos la barra con el valor de vida actual
 
+
 func _physics_process(delta):
 	animaciones()
 	# Detectar movimiento horizontal
@@ -44,6 +45,14 @@ func _physics_process(delta):
 	# Resetear el doble salto cuando el personaje está en el suelo
 	if is_on_floor():
 		can_double_jump = true
+	
+	# Detectar ataque al presionar space
+	if Input.is_action_just_pressed("attack") and not is_attacking:
+		is_attacking = true
+		$AnimatedSprite2D.play("ataque")
+
+func _on_animated_sprite_2d_animation_finished():
+		is_attacking = false
 
 func recibir_dano(dano):
 	vida -= dano
@@ -57,6 +66,9 @@ func morir():
 
 #Animaciones
 func animaciones():
+	if is_attacking: #si está atacando, no cambiar de animcacion
+		return
+	
 	if is_on_floor():
 		if velocity.x !=0:
 			$AnimatedSprite2D.scale.x = 1*sign(velocity.x)

@@ -8,9 +8,9 @@ extends CharacterBody2D
 @export var attack_range := 50.0  # Rango para atacar al personaje
 @export var vida := 60  # Vida del goblin
 @export var fuerza := 10  # Fuerza del ataque del goblin
-
 var barra_vida  # Variable para referenciar la barra de vida
 var player: Node2D = null  # Referencia al nodo del personaje
+var is_attacking := false  # Indica si el goblin está atacando
 
 func _ready():
 	# Buscar al personaje en el Árbol de Escena
@@ -24,21 +24,23 @@ func _physics_process(delta):
 	# Aplicar gravedad para que el enemigo caiga
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		# Limitar la velocidad de caída
 		velocity.y = min(velocity.y, max_fall_speed)
 
-	# Asegurarse de que player no sea null antes de usarlo
-	if player:
-		# Calcular la dirección hacia el personaje
-		var direction = (player.global_position - global_position).normalized()
+	if player and not is_attacking:  # Asegurarse de que el personaje existe y el goblin no está atacando
+		var distance_to_player = global_position.distance_to(player.global_position)
 
-		# Mover al enemigo hacia el personaje solo en el eje X (horizontal)
-		velocity.x = direction.x * speed
+		if distance_to_player <= attack_range:
+			atacar()  # Si está en rango de ataque, activa el ataque
+		elif distance_to_player <= detection_range:
+			# Seguir al personaje si está dentro del rango de detección
+			var direction = (player.global_position - global_position).normalized()
+			velocity.x = direction.x * speed
+		else:
+			# Fuera de rango, detener al goblin
+			velocity.x = 0
 	else:
-		# Si no hay un personaje, detener el movimiento horizontal
-		velocity.x = 0
+		velocity.x = 0  # Sin movimiento si no hay personaje o está atacando
 
-	# Mover al enemigo y manejar colisiones
 	move_and_slide()
 
 func atacar():
@@ -66,16 +68,14 @@ func _on_area_2d_body_entered(body):
 			body.recibir_dano(fuerza)  # Resta vida al personaje
 		recibir_dano(body.fuerza)  # Hacer daño al goblin según la fuerza del personaje
 	
-	#Animaciones
+#Animaciones
 func animaciones():
+	if is_attacking:  # Si está atacando, no cambiar de animación
+		return
+
 	if is_on_floor():
-		if velocity.x !=0:
-			$AnimatedSprite2D.scale.x = 1*sign(velocity.x)
+		if velocity.x != 0:
+			$AnimatedSprite2D.scale.x = 1 * sign(velocity.x)
 			$AnimatedSprite2D.play("walk")
 		else:
 			$AnimatedSprite2D.play("Idle")
-	#else:
-		#if velocity.y < 0:
-			#$AnimatedSprite2D.play("jump")
-		#else:
-			#$AnimatedSprite2D.play("fall")
