@@ -1,9 +1,12 @@
+CollisionShape2D
+Sprite2D
+Area2D
+TileMap
+StaticBody2D
+Camera2D
+ParallaxLayer
 AnimatedSprite2D
 ProgressBar
-Area2D
-Sprite2D
-CollisionShape2D
-StaticBody2D
 Timer
 RigidBody2D
 Node2D

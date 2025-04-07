@@ -17,7 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 		# Restaurar vida al personaje
 		if body.has_method("recibir_dano"):  # Verifica que el personaje tenga el método
-			body.recibir_dano(-15)  # Llama a recibir_dano con valor negativo para "curar"
+			body.recibir_dano(-25)  # Llama a recibir_dano con valor negativo para "curar"
 
 		# Ocultar el ítem después de recogerlo
 		hide()

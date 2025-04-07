@@ -1,27 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm674q5p0rr33"]
+[gd_scene load_steps=2 format=3 uid="uid://dm674q5p0rr33"]
 
-[ext_resource type="Texture2D" uid="uid://c0dn1ek7jeb44" path="res://Resources/Floor/forest-1.png" id="1_kjdha"]
+[ext_resource type="Texture2D" uid="uid://dp1r4wndatuvm" path="res://Scripts/Enemies/parallax_mountain_pack/layers/parallax-mountain-bg.png" id="1_b7i8y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyxst"]
-size = Vector2(20, 16.5098)
+[node name="EscenarioPrueba" type="StaticBody2D"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmsf0"]
-size = Vector2(13, 584.5)
-
-[node name="StaticBody2D" type="StaticBody2D"]
-
-[node name="Forest-1" type="Sprite2D" parent="."]
-texture = ExtResource("1_kjdha")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 170)
-scale = Vector2(40, 2)
-shape = SubResource("RectangleShape2D_kyxst")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-397.5, -140.75)
-shape = SubResource("RectangleShape2D_fmsf0")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(397, -131)
-shape = SubResource("RectangleShape2D_fmsf0")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(577, 324.34)
+scale = Vector2(4.23529, 4.03325)
+texture = ExtResource("1_b7i8y")

@@ -1,0 +1,24 @@
+class_name itemVida
+extends Area2D
+
+func _ready():
+	# Ocultar el ítem al inicio del juego
+	hide()
+	monitoring = false  # Desactivar colisiones inicialmente
+
+	# Esperar 10 segundos antes de mostrar el ítem
+	await get_tree().create_timer(10.0).timeout
+	show()
+	monitoring = true  # Habilitar la detección de colisiones
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Character":  # Verifica que el nodo que entra es el personaje
+		print("Ítem recogido")
+
+		# Restaurar vida al personaje
+		if body.has_method("recibir_dano"):  # Verifica que el personaje tenga el método
+			body.recibir_dano(-25)  # Llama a recibir_dano con valor negativo para "curar"
+
+		# Ocultar el ítem después de recogerlo
+		hide()
+		set_deferred("monitoring", false)  # Desactiva las colisiones de manera segura

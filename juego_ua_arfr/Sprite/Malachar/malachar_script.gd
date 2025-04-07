@@ -5,19 +5,22 @@ extends CharacterBody2D
 @export var jump_force := -500.0  # Fuerza del salto del jefe
 @export var gravity := 1000.0  # Gravedad personalizada
 @export var max_fall_speed := 500.0  # Velocidad máxima al caer
-@export var detection_range := 0.0  # Rango para detectar al personaje (mayor que el goblin)
+@export var detection_range := 300.0  # Rango para detectar al personaje (mayor que el goblin)
 @export var attack_range := 50.0  # Rango para atacar al personaje (mayor alcance)
 @export var jump_cooldown := 2.0  # Tiempo mínimo entre cada salto
-@export var vida := 120  # Vida del enemigo
+@export var vida := 150  # Vida del enemigo
 @export var fuerza := 20  # Fuerza del ataque del enemigo
 
-
+var barra_vida  # Variable para referenciar la barra de vida
 var player: Node2D = null  # Referencia al nodo del personaje
-var is_attacking := false  # Indica si está atacando
+var is_attacking := false  # Indica si el goblin está atacando
 var last_jump_time := 0.0  # Control del tiempo para saltar
 
+
 func _ready():
-	# Buscar al personaje en el Árbol de Escena
+	barra_vida = $ProgressBar
+	barra_vida.max_value = vida
+	barra_vida.value = vida
 	player = get_parent().get_node("Character")
 
 func _physics_process(delta):
@@ -61,12 +64,24 @@ func atacar():
 	velocity.x = 0  # Detener al goblin mientras ataca
 	$AnimatedSprite2D.play("ataque")  # Reproducir la animación de ataque
 	
+func recibir_dano(dano):
+	vida -= dano
+	barra_vida.value = vida
+	if vida <= 0:
+		morir()
+
+func morir():
+	print("Malachar ha muerto.")
+	queue_free()
+	
 func _on_animated_sprite_2d_animation_finished():
 		is_attacking = false  # Salir del estado de ataque
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Character":
-		print("Malachar daña al personaje")  # Puedes reemplazarlo con lógica de daño al jugador
+		if body.has_method("recibir_dano"):
+			body.recibir_dano(fuerza)
+		recibir_dano(body.fuerza) # Puedes reemplazarlo con lógica de daño al jugador
 
 func animaciones():
 	if is_attacking:  # Si está atacando, no cambiar de animación

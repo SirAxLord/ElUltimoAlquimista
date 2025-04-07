@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://caiaklnmp1yge"]
+
+[ext_resource type="Script" path="res://vida.gd" id="1_06rj1"]
+[ext_resource type="Texture2D" uid="uid://o3l7wojd7d6d" path="res://Resources/Items/heart.png" id="2_q8c87"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqg4c"]
+radius = 9.08049
+
+[node name="Item" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Item" type="Area2D" parent="."]
+script = ExtResource("1_06rj1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Item"]
+texture = ExtResource("2_q8c87")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+scale = Vector2(0.655513, 0.542858)
+shape = SubResource("CircleShape2D_kqg4c")
+
+[connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]

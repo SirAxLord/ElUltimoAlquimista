@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://c0a73oq1d2xfv"]
+[gd_scene load_steps=31 format=3 uid="uid://c0a73oq1d2xfv"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Minotaur.gd" id="1_32bcj"]
-[ext_resource type="Texture2D" uid="uid://men7h2gh2kg4" path="res://Resources/Character/minotaur4x.png" id="2_55oov"]
 [ext_resource type="Texture2D" uid="uid://ikia0p04dppj" path="res://Sprite/Minotauro/Minotauro_img/slash_128.png" id="2_ap0ps"]
 [ext_resource type="Texture2D" uid="uid://bi0lk2scdwhk8" path="res://Sprite/Minotauro/Minotauro_img/hurt.png" id="3_s431a"]
 [ext_resource type="Texture2D" uid="uid://cc7mrc3jg8oj5" path="res://Sprite/Minotauro/Minotauro_img/idle.png" id="4_ebejm"]
@@ -51,13 +50,13 @@ region = Rect2(192, 0, 64, 64)
 atlas = ExtResource("3_s431a")
 region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ml1bs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cko2h"]
 atlas = ExtResource("4_ebejm")
-region = Rect2(0, 64, 64, 64)
+region = Rect2(0, 192, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_spc3h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_73s6o"]
 atlas = ExtResource("4_ebejm")
-region = Rect2(64, 64, 64, 64)
+region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uw2f2"]
 atlas = ExtResource("5_kv0ja")
@@ -116,7 +115,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jed7l")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 9.0
 }, {
@@ -148,10 +147,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ml1bs")
+"texture": SubResource("AtlasTexture_cko2h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_spc3h")
+"texture": SubResource("AtlasTexture_73s6o")
 }],
 "loop": true,
 "name": &"idle",
@@ -191,32 +190,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yscb5"]
-size = Vector2(13.125, 20)
+size = Vector2(8.125, 15.9375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8r2p"]
-size = Vector2(34, 60)
+size = Vector2(31, 55)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Minotauro" type="CharacterBody2D"]
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_32bcj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.965887, 0.93842)
 sprite_frames = SubResource("SpriteFrames_a4e0p")
 animation = &"idle"
-frame_progress = 0.176923
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_55oov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-2.38419e-07, 3.5)
 scale = Vector2(3.2, 3.2)
 shape = SubResource("RectangleShape2D_yscb5")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 2)
+position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_i8r2p")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
