@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://dchomrc7mvnr4"]
+[gd_scene load_steps=32 format=3 uid="uid://dchomrc7mvnr4"]
 
 [ext_resource type="Script" path="res://Scripts/Jugador/character.gd" id="1_5qrd7"]
 [ext_resource type="Texture2D" uid="uid://cfaeof1avohlo" path="res://Sprite/Alden/Alden_img/idle.png" id="2_gv655"]
+[ext_resource type="Script" path="res://Escenas/Characters/camera_2d.gd" id="3_aq8st"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j202b"]
 load_path = "res://.godot/imported/slash_oversize.png-8eeb75638af0388d4c4cdbf91b4c0ee1.ctex"
@@ -205,6 +206,7 @@ animations = [{
 size = Vector2(24, 49)
 
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(152, 588)
 script = ExtResource("1_5qrd7")
 metadata/_edit_group_ = true
 
@@ -224,5 +226,13 @@ offset_left = -34.0
 offset_top = -40.0
 offset_right = 39.0
 offset_bottom = -13.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(424, -264)
+ignore_rotation = false
+limit_left = 0
+limit_top = 0
+limit_right = 9925
+script = ExtResource("3_aq8st")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

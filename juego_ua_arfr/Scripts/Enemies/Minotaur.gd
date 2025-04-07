@@ -4,15 +4,13 @@ extends CharacterBody2D
 @export var speed := 120.0  # Velocidad del Minotauro
 @export var gravity := 1000.0  # Fuerza de gravedad
 @export var max_fall_speed := 500.0  # Velocidad máxima de caída
-@export var detection_range := 0  # Rango para detectar al personaje
+@export var detection_range := 300  # Rango para detectar al personaje
 @export var attack_range := 40.0  # Rango de ataque
-@export var vida := 150  # Vida del Minotauro
-@export var fuerza := 20  # Daño que inflige
-@export var respawn_time := 3.0  # Tiempo de reaparición
-
-var barra_vida
-var player: Node2D = null
-var is_attacking := false
+@export var vida := 120  # Vida del Minotauro
+@export var fuerza := 15  # Daño que inflige
+var barra_vida  # Variable para referenciar la barra de vida
+var player: Node2D = null  # Referencia al nodo del personaje
+var is_attacking := false  # Indica si el goblin está atacando
 
 func _ready():
 	barra_vida = $ProgressBar
@@ -56,13 +54,6 @@ func recibir_dano(dano):
 func morir():
 	print("El Minotauro ha muerto.")
 	queue_free()
-	respawn()
-
-func respawn():
-	await get_tree().create_timer(respawn_time).timeout
-	var new_minotaur = Minotaur.new()
-	get_parent().add_child(new_minotaur)
-	new_minotaur.position = global_position + Vector2(randf_range(-100, 100), 0)
 
 func _on_animated_sprite_2d_animation_finished():
 	is_attacking = false

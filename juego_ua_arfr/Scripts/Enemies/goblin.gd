@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed := 100.0  # Velocidad horizontal para seguir al personaje
 @export var gravity := 1000.0  # Fuerza de la gravedad
 @export var max_fall_speed := 500.0  # Velocidad máxima al caer
-@export var detection_range := 0  # Rango para detectar al personaje
+@export var detection_range := 300  # Rango para detectar al personaje
 @export var attack_range := 50.0  # Rango para atacar al personaje
 @export var vida := 60  # Vida del goblin
 @export var fuerza := 10  # Fuerza del ataque del goblin

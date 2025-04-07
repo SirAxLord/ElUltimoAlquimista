@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd4ut75hdbqx5"]
+
+[ext_resource type="Script" path="res://Escenas/Items/Speed.gd" id="1_3sgy7"]
+[ext_resource type="Texture2D" uid="uid://cdp6j46b2cihq" path="res://Resources/Items/bottle-2.png" id="1_dudta"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjt13"]
+radius = 4.0
+height = 18.0
+
+[node name="ItemSpeed" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_3sgy7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_dudta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_fjt13")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

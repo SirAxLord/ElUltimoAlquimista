@@ -1,108 +1,20 @@
 [gd_scene load_steps=13 format=3 uid="uid://dgcrh21qnt1cj"]
 
-[ext_resource type="PackedScene" uid="uid://dm674q5p0rr33" path="res://Escenas/Escenario/Prueba.tscn" id="1_yfy6x"]
 [ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="2_d7nys"]
-[ext_resource type="PackedScene" uid="uid://bwslklrr4oj73" path="res://Escenas/Escenario/Platform.tscn" id="5_5ot73"]
 [ext_resource type="PackedScene" uid="uid://b7ydsxoghsfup" path="res://Escenas/Menus/Menu_pausa.tscn" id="5_121ba"]
 [ext_resource type="PackedScene" uid="uid://bhb0udmgfa6r3" path="res://Escenas/Characters/Goblin.tscn" id="6_soksy"]
 [ext_resource type="PackedScene" uid="uid://bb4x6cprcomph" path="res://Sprite/Malachar/Malachar.tscn" id="7_ddf46"]
-[ext_resource type="PackedScene" uid="uid://dj8ouf8birocj" path="res://Escenas/Escenario/Trap.tscn" id="7_jbie4"]
 [ext_resource type="PackedScene" uid="uid://uhau1y1ua1d7" path="res://Escenas/HUD/hud-vidas.tscn" id="8_g67gj"]
 [ext_resource type="PackedScene" uid="uid://bswjquiex8a1d" path="res://Escenas/HUD/hud-inventario.tscn" id="8_vxqkw"]
 [ext_resource type="PackedScene" uid="uid://fm1r0t2m3bec" path="res://Escenas/Characters/Orc.tscn" id="9_3oqp3"]
-[ext_resource type="PackedScene" uid="uid://caiaklnmp1yge" path="res://Escenas/Items/Item.tscn" id="10_je8vo"]
+[ext_resource type="PackedScene" uid="uid://caiaklnmp1yge" path="res://Escenas/Items/itemVida.tscn" id="10_je8vo"]
+[ext_resource type="PackedScene" uid="uid://bd4ut75hdbqx5" path="res://Escenas/Items/itemSpeed.tscn" id="10_klgl2"]
+[ext_resource type="PackedScene" uid="uid://dydyd74jycuo4" path="res://Escenas/Escenario.tscn" id="11_4flap"]
 [ext_resource type="PackedScene" uid="uid://c0a73oq1d2xfv" path="res://Escenas/Characters/Minotaur.tscn" id="11_7p6jl"]
+[ext_resource type="PackedScene" uid="uid://dm2irb10jtxbp" path="res://Escenas/Items/itemFuerza.tscn" id="11_wrsoq"]
 
 [node name="LevelPrueba" type="Node2D"]
-position = Vector2(305, -4)
-
-[node name="StaticBody2D" parent="." instance=ExtResource("1_yfy6x")]
-position = Vector2(274, 465)
-scale = Vector2(1.45, 1)
-
-[node name="Character" parent="StaticBody2D" instance=ExtResource("2_d7nys")]
-position = Vector2(-355.862, 97)
-
-[node name="Platform1" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(-251.724, 45)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform2" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(-217.931, 45)
-scale = Vector2(0.93793, 1.56)
-
-[node name="platform3" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(-184.138, 45)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform4" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(-48.9655, 41)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform5" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(-15.1724, 41)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform6" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(18.6207, 41)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Goblin" parent="StaticBody2D" instance=ExtResource("6_soksy")]
-position = Vector2(253.103, 127)
-
-[node name="Trap" parent="StaticBody2D" instance=ExtResource("7_jbie4")]
-position = Vector2(17, 11)
-scale = Vector2(0.689655, 1)
-
-[node name="Item" parent="StaticBody2D" instance=ExtResource("10_je8vo")]
-position = Vector2(-253.793, 17)
-
-[node name="Platform7" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(136.552, 40)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform8" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(170.345, 40)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform9" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(204.138, 40)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform10" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(-148.276, -85)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform11" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(-114.483, -85)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform12" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(-80.6897, -85)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform13" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(51.7241, -85)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform14" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(85.5172, -85)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Platform15" parent="StaticBody2D" instance=ExtResource("5_5ot73")]
-position = Vector2(119.31, -85)
-scale = Vector2(0.93793, 1.56)
-
-[node name="Malachar" parent="StaticBody2D" instance=ExtResource("7_ddf46")]
-position = Vector2(85.5172, -133)
-
-[node name="Minotaur" parent="StaticBody2D" instance=ExtResource("11_7p6jl")]
-position = Vector2(-53.1035, 104)
-scale = Vector2(1.1, 1.65)
-
-[node name="Orc" parent="StaticBody2D" instance=ExtResource("9_3oqp3")]
-position = Vector2(91.7242, 113)
-scale = Vector2(1.25, 1.467)
+position = Vector2(1627, 257)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -121,3 +33,90 @@ layout_direction = 3
 visible = false
 offset_top = 204.0
 offset_bottom = 204.0
+
+[node name="Character" parent="." instance=ExtResource("2_d7nys")]
+position = Vector2(-1483, 243)
+
+[node name="Juego" parent="." instance=ExtResource("11_4flap")]
+position = Vector2(-1628, -238)
+
+[node name="Goblin" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(-834, 334)
+
+[node name="Goblin2" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(-462, 204)
+
+[node name="Goblin3" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(75, 330)
+
+[node name="Goblin4" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(493, 141)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("9_3oqp3")]
+position = Vector2(1128, 324)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("9_3oqp3")]
+position = Vector2(1613, 39)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("9_3oqp3")]
+position = Vector2(2304, 324)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("9_3oqp3")]
+position = Vector2(3399, -4)
+
+[node name="Goblin5" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(3936, -5)
+
+[node name="Goblin6" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(3607, 326)
+
+[node name="CharacterBody2D6" parent="." instance=ExtResource("11_7p6jl")]
+position = Vector2(4786, 142)
+
+[node name="CharacterBody2D7" parent="." instance=ExtResource("11_7p6jl")]
+position = Vector2(5962, 329)
+
+[node name="CharacterBody2D8" parent="." instance=ExtResource("11_7p6jl")]
+position = Vector2(5678, 148)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_ddf46")]
+position = Vector2(8023, 318)
+
+[node name="ItemSpeed" parent="." instance=ExtResource("10_klgl2")]
+position = Vector2(-471, 345)
+
+[node name="ItemFuerza" parent="." instance=ExtResource("11_wrsoq")]
+position = Vector2(91, 159)
+
+[node name="Item" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(793, -113)
+
+[node name="ItemSpeed2" parent="." instance=ExtResource("10_klgl2")]
+position = Vector2(2191, 135)
+
+[node name="ItemFuerza2" parent="." instance=ExtResource("11_wrsoq")]
+position = Vector2(3005, 139)
+
+[node name="Item2" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(2589, 137)
+
+[node name="Item3" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(3653, 11)
+
+[node name="ItemSpeed3" parent="." instance=ExtResource("10_klgl2")]
+position = Vector2(4348, 331)
+
+[node name="Item4" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(4146, -15)
+
+[node name="ItemFuerza3" parent="." instance=ExtResource("11_wrsoq")]
+position = Vector2(5546, 21)
+
+[node name="Item5" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(5836, -143)
+
+[node name="ItemFuerza4" parent="." instance=ExtResource("11_wrsoq")]
+position = Vector2(6180, 353)
+
+[node name="ItemSpeed4" parent="." instance=ExtResource("10_klgl2")]
+position = Vector2(4830, -59)

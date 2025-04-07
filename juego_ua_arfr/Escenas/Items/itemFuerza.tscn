@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm2irb10jtxbp"]
+
+[ext_resource type="Script" path="res://Escenas/Items/fuerza.gd" id="1_1g6ty"]
+[ext_resource type="Texture2D" uid="uid://bkbtjlkr8a64b" path="res://Resources/Items/gem.png" id="1_doybo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2tpr"]
+size = Vector2(12, 12)
+
+[node name="ItemFuerza" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_1g6ty")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_doybo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_j2tpr")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
