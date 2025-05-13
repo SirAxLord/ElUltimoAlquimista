@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dm674q5p0rr33"]
 
-[ext_resource type="Texture2D" uid="uid://dp1r4wndatuvm" path="res://Scripts/Enemies/parallax_mountain_pack/layers/parallax-mountain-bg.png" id="1_b7i8y"]
+[ext_resource type="Texture2D" uid="uid://dp1r4wndatuvm" path="res://Resources/Escenario5/parallax-mountain-bg.png" id="1_b7i8y"]
 
 [node name="EscenarioPrueba" type="StaticBody2D"]
 

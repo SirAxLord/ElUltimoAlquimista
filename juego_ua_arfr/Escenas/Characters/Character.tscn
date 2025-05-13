@@ -206,7 +206,7 @@ animations = [{
 size = Vector2(24, 49)
 
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
-position = Vector2(152, 588)
+position = Vector2(109, 963)
 script = ExtResource("1_5qrd7")
 metadata/_edit_group_ = true
 
@@ -228,11 +228,13 @@ offset_right = 39.0
 offset_bottom = -13.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(424, -264)
+position = Vector2(214, -434)
 ignore_rotation = false
 limit_left = 0
 limit_top = 0
 limit_right = 9925
+limit_bottom = 0
+limit_smoothed = true
 script = ExtResource("3_aq8st")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

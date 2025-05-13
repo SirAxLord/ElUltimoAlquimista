@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://x4xjphuwwnsf"]
+
+[ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="1_jcupg"]
+[ext_resource type="PackedScene" uid="uid://deury3lmtxtbb" path="res://Escenas/Escenario/Mapa prueba.tscn" id="2_704s6"]
+[ext_resource type="PackedScene" uid="uid://dam8w8sexxobe" path="res://Escenas/Levels/Escenario_Prueba4.tscn" id="3_dpajy"]
+
+[node name="Level7" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("1_jcupg")]
+position = Vector2(61, 964)
+
+[node name="MapaPrueba" parent="." instance=ExtResource("2_704s6")]
+
+[node name="EscenarioPrueba4" parent="." instance=ExtResource("3_dpajy")]
