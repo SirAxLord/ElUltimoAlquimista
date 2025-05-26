@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://wi8nb42v81k8"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/menu_dead.gd" id="1_pwgbl"]
+[ext_resource type="FontFile" uid="uid://fuj21078fupq" path="res://Resources/Text/EaDesignerRegular.ttf" id="2_ou2lu"]
+[ext_resource type="Texture2D" uid="uid://c8b2egj4l1vtp" path="res://Resources/Imagen/HD-wallpaper-heart-pixel-8-bits-heart-link-nintendo-8bits-pixel-zelda-thumbnail.jpg" id="2_xymdc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw1mi"]
+bg_color = Color(0.623529, 0.0196078, 0.0588235, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hq6e"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_atnqw"]
+default_font = ExtResource("2_ou2lu")
+
+[node name="Menu Fin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pwgbl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 770.0
+offset_top = 339.0
+offset_right = 1108.0
+offset_bottom = 940.0
+texture = ExtResource("2_xymdc")
+
+[node name="Salir" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.706
+anchor_top = 0.878
+anchor_right = 0.706
+anchor_bottom = 0.878
+offset_left = -561.52
+offset_top = -82.2401
+offset_right = -268.52
+offset_bottom = -14.2401
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxFlat_jw1mi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7hq6e")
+text = "SALIR"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 285.0
+offset_right = 1731.0
+offset_bottom = 461.0
+theme = SubResource("Theme_atnqw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 85
+text = "GRACIAS POR JUGAR"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 85
+text = "Te esperamos para la siguiente prueba."
+vertical_alignment = 1
+
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=3 uid="uid://dgcrh21qnt1cj"]
+
+[ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="2_d7nys"]
+[ext_resource type="PackedScene" uid="uid://b7ydsxoghsfup" path="res://Escenas/Menus/Menu_pausa.tscn" id="5_121ba"]
+[ext_resource type="PackedScene" uid="uid://bhb0udmgfa6r3" path="res://Escenas/Characters/Goblin.tscn" id="6_soksy"]
+[ext_resource type="PackedScene" uid="uid://bb4x6cprcomph" path="res://Sprite/Malachar/Malachar.tscn" id="7_ddf46"]
+[ext_resource type="PackedScene" uid="uid://uhau1y1ua1d7" path="res://Escenas/HUD/hud-vidas.tscn" id="8_g67gj"]
+[ext_resource type="PackedScene" uid="uid://bswjquiex8a1d" path="res://Escenas/HUD/hud-inventario.tscn" id="8_vxqkw"]
+[ext_resource type="PackedScene" uid="uid://fm1r0t2m3bec" path="res://Escenas/Characters/Orc.tscn" id="9_3oqp3"]
+[ext_resource type="PackedScene" uid="uid://caiaklnmp1yge" path="res://Escenas/Items/itemVida.tscn" id="10_je8vo"]
+[ext_resource type="PackedScene" uid="uid://bd4ut75hdbqx5" path="res://Escenas/Items/itemSpeed.tscn" id="10_klgl2"]
+[ext_resource type="PackedScene" uid="uid://dydyd74jycuo4" path="res://Escenas/Levels/Escenario_Prueba.tscn" id="11_4flap"]
+[ext_resource type="PackedScene" uid="uid://c0a73oq1d2xfv" path="res://Escenas/Characters/Minotaur.tscn" id="11_7p6jl"]
+[ext_resource type="PackedScene" uid="uid://dm2irb10jtxbp" path="res://Escenas/Items/itemFuerza.tscn" id="11_wrsoq"]
+[ext_resource type="PackedScene" uid="uid://deury3lmtxtbb" path="res://Escenas/Escenario/Mapa prueba.tscn" id="13_41dmj"]
+
+[node name="LevelPrueba" type="Node2D"]
+position = Vector2(1627, 257)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuPausa" parent="CanvasLayer" instance=ExtResource("5_121ba")]
+process_mode = 3
+visible = false
+
+[node name="VidasJugador3" parent="CanvasLayer" instance=ExtResource("8_g67gj")]
+visible = false
+
+[node name="VidasJugador2" parent="CanvasLayer" instance=ExtResource("8_g67gj")]
+visible = false
+layout_direction = 3
+
+[node name="hud inventario" parent="CanvasLayer" instance=ExtResource("8_vxqkw")]
+visible = false
+offset_top = 204.0
+offset_bottom = 204.0
+
+[node name="Character" parent="." instance=ExtResource("2_d7nys")]
+position = Vector2(-1569, 746)
+speed = null
+jump_force = null
+gravity = null
+vida = null
+fuerza = null
+knockback_horizontal = null
+knockback_vertical = null
+
+[node name="Juego" parent="." instance=ExtResource("11_4flap")]
+position = Vector2(-1628, -238)
+
+[node name="Goblin2" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(-459, 632)
+
+[node name="Goblin3" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(78, 758)
+
+[node name="Goblin4" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(496, 569)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("9_3oqp3")]
+position = Vector2(1131, 752)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("9_3oqp3")]
+position = Vector2(1616, 467)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("9_3oqp3")]
+position = Vector2(2307, 752)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("9_3oqp3")]
+position = Vector2(3402, 424)
+
+[node name="Goblin5" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(3939, 423)
+
+[node name="Goblin6" parent="." instance=ExtResource("6_soksy")]
+position = Vector2(3610, 754)
+
+[node name="CharacterBody2D6" parent="." instance=ExtResource("11_7p6jl")]
+position = Vector2(4789, 570)
+
+[node name="CharacterBody2D7" parent="." instance=ExtResource("11_7p6jl")]
+position = Vector2(5965, 757)
+
+[node name="CharacterBody2D8" parent="." instance=ExtResource("11_7p6jl")]
+position = Vector2(5681, 576)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_ddf46")]
+position = Vector2(8026, 746)
+
+[node name="ItemSpeed" parent="." instance=ExtResource("10_klgl2")]
+position = Vector2(-468, 773)
+
+[node name="ItemFuerza" parent="." instance=ExtResource("11_wrsoq")]
+position = Vector2(94, 587)
+
+[node name="Item" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(796, 315)
+
+[node name="ItemSpeed2" parent="." instance=ExtResource("10_klgl2")]
+position = Vector2(2194, 563)
+
+[node name="ItemFuerza2" parent="." instance=ExtResource("11_wrsoq")]
+position = Vector2(3008, 567)
+
+[node name="Item2" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(2592, 565)
+
+[node name="Item3" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(3656, 439)
+
+[node name="ItemSpeed3" parent="." instance=ExtResource("10_klgl2")]
+position = Vector2(4351, 759)
+
+[node name="Item4" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(4149, 413)
+
+[node name="ItemFuerza3" parent="." instance=ExtResource("11_wrsoq")]
+position = Vector2(5549, 449)
+
+[node name="Item5" parent="." instance=ExtResource("10_je8vo")]
+position = Vector2(5839, 285)
+
+[node name="ItemFuerza4" parent="." instance=ExtResource("11_wrsoq")]
+position = Vector2(6183, 781)
+
+[node name="ItemSpeed4" parent="." instance=ExtResource("10_klgl2")]
+position = Vector2(4833, 369)
+
+[node name="MapaPrueba" parent="." instance=ExtResource("13_41dmj")]
+position = Vector2(-1628, -224)

@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://idhuu6fw12ga"]
+[gd_scene load_steps=9 format=3 uid="uid://idhuu6fw12ga"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/menu.gd" id="1_1h380"]
 [ext_resource type="Texture2D" uid="uid://tnohgo3qmlxk" path="res://Resources/Imagen/image1_0 (1).jpg" id="2_dn7v2"]
-[ext_resource type="Texture2D" uid="uid://dqudtuq5e2fbl" path="res://Resources/Imagen/upscalemedia-transformed.png" id="3_ov3eb"]
-
+[ext_resource type="Texture2D" uid="uid://7ip0hio1pgty" path="res://Resources/Imagen/image0_0__1_-removebg-preview.png" id="3_nphn2"]
+[ext_resource type="AudioStream" uid="uid://bl42yqisydk1x" path="res://Resources/Music/IntroMusica.mp3" id="4_u5icu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8xui"]
 bg_color = Color(0.779291, 0.779291, 0.779291, 1)
@@ -58,7 +58,7 @@ offset_right = 300.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_ov3eb")
+texture = ExtResource("3_nphn2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -89,6 +89,12 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_ewx8i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xlwyi")
 text = "SALIR"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_u5icu")
+volume_db = 12.55
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

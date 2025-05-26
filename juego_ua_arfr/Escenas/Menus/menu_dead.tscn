@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxhix7s40mpf0"]
+[gd_scene load_steps=8 format=3 uid="uid://dxhix7s40mpf0"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/menu_dead.gd" id="1_2kiua"]
+[ext_resource type="Texture2D" uid="uid://66hbq02km57b" path="res://Resources/Imagen/a866e4cc4c192a41ee6538fd6384d5c4.jpg" id="2_fcxa1"]
+[ext_resource type="AudioStream" uid="uid://cm5tms8mmpflk" path="res://Resources/Music/Efects/081790_quotgame-overquot-evil-88883.mp3" id="3_i2pqj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deoo8"]
 bg_color = Color(0, 0.318877, 0.0864647, 1)
@@ -39,6 +41,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2kiua")
 
+[node name="SonidoFin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i2pqj")
+volume_db = 20.0
+autoplay = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -46,7 +53,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1524.0
+offset_top = 572.0
+offset_right = 1966.0
+offset_bottom = 1098.0
+scale = Vector2(0.833971, 0.96)
+texture = ExtResource("2_fcxa1")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

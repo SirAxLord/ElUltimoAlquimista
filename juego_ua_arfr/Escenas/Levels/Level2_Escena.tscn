@@ -9,117 +9,175 @@
 [ext_resource type="Texture2D" uid="uid://dmf7opsjo8nrq" path="res://Resources/Backgrounds/3/1.png" id="7_vxfys"]
 
 [node name="Escena4" type="Node2D"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(960, 540)
 motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("1_7ir5c")
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(2880, 540)
 motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("1_7ir5c")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(960, 540)
 motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("2_22i55")
 
 [node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(2880, 540)
 motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("2_22i55")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(960, 540)
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("3_80rp7")
 
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(2880, 540)
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer10"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("3_80rp7")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(960, 540)
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("4_42xa1")
 
 [node name="ParallaxLayer11" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(2880, 540)
 motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer11"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("4_42xa1")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(960, 540)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("5_t0lct")
 
 [node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(2880, 540)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer12"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("5_t0lct")
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(960, 540)
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("6_yk30y")
 
 [node name="ParallaxLayer13" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(2880, 540)
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer13"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("6_yk30y")
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(960, 540)
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("7_vxfys")
 
 [node name="ParallaxLayer14" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 position = Vector2(2880, 540)
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer14"]
+modulate = Color(0.813258, 0.813258, 0.813258, 1)
+self_modulate = Color(0.873298, 0.873298, 0.873298, 1)
 texture = ExtResource("7_vxfys")

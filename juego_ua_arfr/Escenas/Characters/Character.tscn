@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://dchomrc7mvnr4"]
+[gd_scene load_steps=35 format=3 uid="uid://dchomrc7mvnr4"]
 
 [ext_resource type="Script" path="res://Scripts/Jugador/character.gd" id="1_5qrd7"]
 [ext_resource type="Texture2D" uid="uid://cfaeof1avohlo" path="res://Sprite/Alden/Alden_img/idle.png" id="2_gv655"]
 [ext_resource type="Script" path="res://Escenas/Characters/camera_2d.gd" id="3_aq8st"]
+[ext_resource type="AudioStream" uid="uid://c4lri71os6rpf" path="res://Resources/Music/Efects/sword-sound-260274.mp3" id="4_bbwyx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j202b"]
 load_path = "res://.godot/imported/slash_oversize.png-8eeb75638af0388d4c4cdbf91b4c0ee1.ctex"
@@ -203,7 +204,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yscb5"]
-size = Vector2(24, 49)
+size = Vector2(22, 49)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfhbh"]
+bg_color = Color(0.176471, 0.870588, 1, 0.568627)
+border_color = Color(5.39064e-06, 0.578644, 0.804089, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ornw"]
+size = Vector2(139, 12)
 
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(109, 963)
@@ -218,7 +231,7 @@ frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 12.5)
+position = Vector2(6, 12.5)
 shape = SubResource("RectangleShape2D_yscb5")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -226,9 +239,12 @@ offset_left = -34.0
 offset_top = -40.0
 offset_right = 39.0
 offset_bottom = -13.0
+theme_override_constants/outline_size = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_dfhbh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(214, -434)
+visible = false
+position = Vector2(502, -386)
 ignore_rotation = false
 limit_left = 0
 limit_top = 0
@@ -237,4 +253,14 @@ limit_bottom = 0
 limit_smoothed = true
 script = ExtResource("3_aq8st")
 
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(7.5, 1)
+shape = SubResource("RectangleShape2D_5ornw")
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bbwyx")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_body_entered"]

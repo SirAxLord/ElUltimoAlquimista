@@ -1,7 +1,8 @@
-res://Levels/level_1.tscn
-res://Levels/level_2.tscn
-res://Levels/level_3.tscn
-res://Levels/level_4.tscn
-res://Levels/level_5.tscn
-res://Levels/level_6.tscn
-res://Levels/level_7.tscn
+res://Levels/level_prueba.tscn
+res://Escenas/Menus/Menu_Principal.tscn
+res://Escenas/Escenario/Mapa prueba.tscn
+res://Escenas/Menus/menu_fin.tscn
+res://Escenas/Menus/menu_dead.tscn
+res://Scripts/Jugador/character.gd
+res://Levels/finjuego.gd
+res://Scripts/Menu/menu_dead.gd

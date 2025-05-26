@@ -1,18 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgcrh21qnt1cj"]
+[gd_scene load_steps=17 format=3 uid="uid://dgcrh21qnt1cj"]
 
 [ext_resource type="PackedScene" uid="uid://dchomrc7mvnr4" path="res://Escenas/Characters/Character.tscn" id="2_d7nys"]
 [ext_resource type="PackedScene" uid="uid://b7ydsxoghsfup" path="res://Escenas/Menus/Menu_pausa.tscn" id="5_121ba"]
+[ext_resource type="FontFile" uid="uid://3g0qhoam8nt0" path="res://Resources/Text/EaDesignerBold.ttf" id="5_v30ku"]
 [ext_resource type="PackedScene" uid="uid://bhb0udmgfa6r3" path="res://Escenas/Characters/Goblin.tscn" id="6_soksy"]
-[ext_resource type="PackedScene" uid="uid://bb4x6cprcomph" path="res://Sprite/Malachar/Malachar.tscn" id="7_ddf46"]
-[ext_resource type="PackedScene" uid="uid://uhau1y1ua1d7" path="res://Escenas/HUD/hud-vidas.tscn" id="8_g67gj"]
-[ext_resource type="PackedScene" uid="uid://bswjquiex8a1d" path="res://Escenas/HUD/hud-inventario.tscn" id="8_vxqkw"]
 [ext_resource type="PackedScene" uid="uid://fm1r0t2m3bec" path="res://Escenas/Characters/Orc.tscn" id="9_3oqp3"]
 [ext_resource type="PackedScene" uid="uid://caiaklnmp1yge" path="res://Escenas/Items/itemVida.tscn" id="10_je8vo"]
 [ext_resource type="PackedScene" uid="uid://bd4ut75hdbqx5" path="res://Escenas/Items/itemSpeed.tscn" id="10_klgl2"]
-[ext_resource type="PackedScene" uid="uid://dydyd74jycuo4" path="res://Escenas/Levels/Escenario_Prueba.tscn" id="11_4flap"]
 [ext_resource type="PackedScene" uid="uid://c0a73oq1d2xfv" path="res://Escenas/Characters/Minotaur.tscn" id="11_7p6jl"]
 [ext_resource type="PackedScene" uid="uid://dm2irb10jtxbp" path="res://Escenas/Items/itemFuerza.tscn" id="11_wrsoq"]
 [ext_resource type="PackedScene" uid="uid://deury3lmtxtbb" path="res://Escenas/Escenario/Mapa prueba.tscn" id="13_41dmj"]
+[ext_resource type="AudioStream" uid="uid://b4061vise0bqh" path="res://Resources/Music/fondo_nivel1.ogg" id="13_t4l27"]
+[ext_resource type="PackedScene" uid="uid://cb1gosaw6drey" path="res://Escenas/Levels/Level2_Escena.tscn" id="13_t4tnb"]
+[ext_resource type="Texture2D" uid="uid://ds3bk7m46tfgc" path="res://Resources/Imagen/vecteezy_medieval-wooden-doors-closed-gates-for-game_13224446-removebg-preview.png" id="14_15852"]
+[ext_resource type="Script" path="res://Levels/finjuego.gd" id="14_olcjd"]
+
+[sub_resource type="Theme" id="Theme_ttg8h"]
+default_font = ExtResource("5_v30ku")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0vit"]
+size = Vector2(46, 110)
 
 [node name="LevelPrueba" type="Node2D"]
 position = Vector2(1627, 257)
@@ -23,26 +30,11 @@ position = Vector2(1627, 257)
 process_mode = 3
 visible = false
 
-[node name="VidasJugador3" parent="CanvasLayer" instance=ExtResource("8_g67gj")]
-visible = false
-
-[node name="VidasJugador2" parent="CanvasLayer" instance=ExtResource("8_g67gj")]
-visible = false
-layout_direction = 3
-
-[node name="hud inventario" parent="CanvasLayer" instance=ExtResource("8_vxqkw")]
-visible = false
-offset_top = 204.0
-offset_bottom = 204.0
+[node name="Escena4" parent="." instance=ExtResource("13_t4tnb")]
+position = Vector2(0, 318)
 
 [node name="Character" parent="." instance=ExtResource("2_d7nys")]
-position = Vector2(-1569, 746)
-
-[node name="Juego" parent="." instance=ExtResource("11_4flap")]
-position = Vector2(-1628, -238)
-
-[node name="Goblin" parent="." instance=ExtResource("6_soksy")]
-position = Vector2(-831, 762)
+position = Vector2(-1455, 664)
 
 [node name="Goblin2" parent="." instance=ExtResource("6_soksy")]
 position = Vector2(-459, 632)
@@ -79,9 +71,6 @@ position = Vector2(5965, 757)
 
 [node name="CharacterBody2D8" parent="." instance=ExtResource("11_7p6jl")]
 position = Vector2(5681, 576)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("7_ddf46")]
-position = Vector2(8026, 746)
 
 [node name="ItemSpeed" parent="." instance=ExtResource("10_klgl2")]
 position = Vector2(-468, 773)
@@ -124,3 +113,152 @@ position = Vector2(4833, 369)
 
 [node name="MapaPrueba" parent="." instance=ExtResource("13_41dmj")]
 position = Vector2(-1628, -224)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1298.0
+offset_top = -224.0
+offset_right = 77.0
+offset_bottom = -67.0
+grow_horizontal = 2
+theme = SubResource("Theme_ttg8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "FASE BETA"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "LLEGA AL FINAL DEL NIVEL"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_left = -1247.0
+offset_top = 196.0
+offset_right = -606.0
+offset_bottom = 386.0
+theme = SubResource("Theme_ttg8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Controles Basicos"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Movimiento :  D - Derecha, 
+                     A - Izquerda
+Saltar:        w , Flecha Arriba↑ 
+Atacar:      Click Izquierdo, Barra Espacio
+Pausar:     P"
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+offset_left = -220.0
+offset_top = 498.0
+offset_right = 421.0
+offset_bottom = 540.0
+theme = SubResource("Theme_ttg8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0.368627, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Item Fuerza"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0.411765, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Incrementa el ataque"
+horizontal_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+offset_left = -790.0
+offset_top = 688.0
+offset_right = -149.0
+offset_bottom = 730.0
+theme = SubResource("Theme_ttg8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0.882353, 1)
+theme_override_font_sizes/font_size = 20
+text = "Item Velocidad"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Incrementa la Velocidad del Personaje"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="."]
+offset_left = 464.0
+offset_top = 245.0
+offset_right = 1105.0
+offset_bottom = 287.0
+theme = SubResource("Theme_ttg8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Item Vida"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Recuperas Vida"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_t4l27")
+volume_db = 5.368
+pitch_scale = 0.8
+autoplay = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("14_olcjd")
+
+[node name="TextureRect" type="TextureRect" parent="Area2D"]
+offset_left = 6820.0
+offset_top = 427.0
+offset_right = 7166.0
+offset_bottom = 728.0
+scale = Vector2(0.173654, 0.295959)
+texture = ExtResource("14_15852")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6846, 477)
+shape = SubResource("RectangleShape2D_r0vit")
+
+[connection signal="body_entered" from="Area2D" to="Character" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
