@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://bhb0udmgfa6r3"]
+[gd_scene load_steps=34 format=3 uid="uid://bhb0udmgfa6r3"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/goblin.gd" id="1_3qec6"]
 [ext_resource type="Texture2D" uid="uid://b4jtrncyg44t8" path="res://Sprite/Goblin/Goblin_img/thrust.png" id="2_c8cg3"]
 [ext_resource type="Texture2D" uid="uid://dbb14fhq64pdv" path="res://Sprite/Goblin/Goblin_img/idle.png" id="3_btvyj"]
 [ext_resource type="Texture2D" uid="uid://dauqis5kmk0w5" path="res://Sprite/Goblin/Goblin_img/walk.png" id="4_66pbk"]
 [ext_resource type="Texture2D" uid="uid://r8gicx74piml" path="res://Sprite/Goblin/Goblin_img/hurt.png" id="4_vhxej"]
+[ext_resource type="AudioStream" uid="uid://da2bvek3ix2sr" path="res://Resources/Music/Efects/weapon-axe-hit-01-153372.mp3" id="6_u4xud"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2hqq"]
 atlas = ExtResource("3_btvyj")
@@ -194,7 +195,14 @@ animations = [{
 size = Vector2(23, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr050"]
-size = Vector2(29, 52)
+size = Vector2(63, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgcax"]
+bg_color = Color(0.382726, 0, 0.0431177, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Goblin" type="CharacterBody2D"]
 position = Vector2(13, 15)
@@ -204,6 +212,8 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6s56k")
 animation = &"attack"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 6)
@@ -212,7 +222,7 @@ shape = SubResource("RectangleShape2D_yscb5")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.5, 6)
+position = Vector2(3.5, 12)
 shape = SubResource("RectangleShape2D_qr050")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -220,7 +230,12 @@ offset_left = -36.0
 offset_top = -49.0
 offset_right = 43.0
 offset_bottom = -22.0
+theme_override_constants/outline_size = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_cgcax")
 max_value = 60.0
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_u4xud")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

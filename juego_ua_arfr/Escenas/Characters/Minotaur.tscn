@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://c0a73oq1d2xfv"]
+[gd_scene load_steps=33 format=3 uid="uid://c0a73oq1d2xfv"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Minotaur.gd" id="1_32bcj"]
 [ext_resource type="Texture2D" uid="uid://ikia0p04dppj" path="res://Sprite/Minotauro/Minotauro_img/slash_128.png" id="2_ap0ps"]
 [ext_resource type="Texture2D" uid="uid://bi0lk2scdwhk8" path="res://Sprite/Minotauro/Minotauro_img/hurt.png" id="3_s431a"]
 [ext_resource type="Texture2D" uid="uid://cc7mrc3jg8oj5" path="res://Sprite/Minotauro/Minotauro_img/idle.png" id="4_ebejm"]
 [ext_resource type="Texture2D" uid="uid://cj6w6clpkc8qh" path="res://Sprite/Minotauro/Minotauro_img/walk.png" id="5_kv0ja"]
+[ext_resource type="AudioStream" uid="uid://iaucj6kf8yx8" path="res://Resources/Music/Efects/draw-a-sword-327726.mp3" id="6_kgrdn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8ja1"]
 atlas = ExtResource("2_ap0ps")
@@ -193,7 +194,14 @@ animations = [{
 size = Vector2(8.125, 15.9375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8r2p"]
-size = Vector2(31, 55)
+size = Vector2(46, 19.1667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhkhs"]
+bg_color = Color(0.384314, 0, 0.0431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Minotauro" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
@@ -212,7 +220,7 @@ shape = SubResource("RectangleShape2D_yscb5")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 3.5)
+position = Vector2(7, 2.91667)
 shape = SubResource("RectangleShape2D_i8r2p")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -220,7 +228,12 @@ offset_left = -38.0
 offset_top = -60.0
 offset_right = 41.0
 offset_bottom = -33.0
+theme_override_constants/outline_size = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_nhkhs")
 max_value = 60.0
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_kgrdn")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

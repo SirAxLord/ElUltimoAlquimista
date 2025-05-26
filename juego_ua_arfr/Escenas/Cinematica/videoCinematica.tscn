@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://4iwd6ddo0u3s"]
+
+[ext_resource type="Script" path="res://Scripts/video_cinematica.gd" id="1_2ni2u"]
+[ext_resource type="VideoStream" path="res://Resources/Video/CinematicaInicioJuego.ogv" id="1_7pgak"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k8owx"]
+size = Vector2(50, 50)
+orientation = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2fhbp"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2ni2u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(962, 545)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(963.5, 544.2)
+scale = Vector2(38.46, -21.632)
+mesh = SubResource("PlaneMesh_k8owx")
+texture = SubResource("ViewportTexture_2fhbp")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1080, 1080)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_7pgak")
